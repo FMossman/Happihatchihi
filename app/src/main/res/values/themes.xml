@@ -28,6 +28,23 @@
         <!-- Customised theme for inputing text -->
         <item name="android:background">@drawable/edittext_background</item>
         <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:paddingLeft">16dp</item>
+    </style>
+
+    <style name="BottomNavStyle" parent="Widget.Design.BottomNavigationView">
+        <!-- Customize attributes here -->
+        <item name="android:layout_height">80dp</item>
+        <item name="itemBackground">@color/white</item>
+        <item name="itemIconSize">36dp</item>
+        <item name="itemIconTint">@color/colorPrimary</item>
+        <item name="itemPaddingBottom">10dp</item>
+        <item name="itemPaddingTop">10dp</item>
+        <item name="itemTextColor">@color/colorPrimary</item>
+        <item name="labelVisibilityMode">unlabeled</item>
+        <item name="android:animateOnClick">false</item>
+
+        <!-- Add more customizations here -->
     </style>
 
 </resources>
+
