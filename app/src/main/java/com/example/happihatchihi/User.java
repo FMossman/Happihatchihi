@@ -1,5 +1,5 @@
 package com.example.happihatchihi;
-
+import java.util.ArrayList;
 
 /**
  * The User class represents a user in the system.
@@ -13,6 +13,11 @@ public class User {
     private String gender;
     private String firstName;
     private String lastName;
+    private ArrayList<Goal> goals;
+    private Boolean hatchiAlive;
+    private Boolean hatchiPaused;
+    private int streakCount;
+    private Hatchi hatchi;
 
     public User(String username, String password, String email, int age, String gender, String firstName, String lastName) {
         this.username = username;
@@ -22,11 +27,16 @@ public class User {
         this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.goals = new ArrayList<>();
+        this.hatchiAlive = true;
+        this.hatchiPaused = false;
+        this.streakCount = 0;
+        this.Hatchi = new Hatchi;
+
     }
 
     /**
      * Returns the first name of the user.
-     *
      * @return the first name of the user
      */
     public String getFirstName() {
@@ -43,7 +53,6 @@ public class User {
 
     /**
      * Returns the last name of the user.
-     *
      * @return the last name of the user
      */
     public String getLastName() {
@@ -52,7 +61,6 @@ public class User {
 
     /**
      * Sets the last name of the user.
-     *
      * @param lastName the new last name of the user
      */
 
