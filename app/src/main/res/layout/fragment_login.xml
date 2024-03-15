@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="?attr/fullscreenBackgroundColor"
     android:theme="@style/ThemeOverlay.HappiHatchiHi.FullscreenContainer"
-    tools:context=".LoginFragment">
+    tools:context=".frontend.LoginFragment">
 
     <FrameLayout
         android:layout_width="match_parent"

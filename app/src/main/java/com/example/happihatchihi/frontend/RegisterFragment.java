@@ -1,4 +1,4 @@
-package com.example.happihatchihi;
+package com.example.happihatchihi.frontend;
 
 import android.annotation.SuppressLint;
 
@@ -18,13 +18,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
-import com.example.happihatchihi.databinding.FragmentLoginBinding;
+import com.example.happihatchihi.databinding.FragmentRegisterBinding;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class LoginFragment extends Fragment {
+public class RegisterFragment extends Fragment {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -106,7 +106,7 @@ public class LoginFragment extends Fragment {
         }
     };
 
-    private FragmentLoginBinding binding;
+    private FragmentRegisterBinding binding;
 
     @Nullable
     @Override
@@ -114,7 +114,7 @@ public class LoginFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        binding = FragmentLoginBinding.inflate(inflater, container, false);
+        binding = FragmentRegisterBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }

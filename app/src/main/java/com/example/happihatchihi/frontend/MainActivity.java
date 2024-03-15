@@ -1,4 +1,4 @@
-package com.example.happihatchihi;
+package com.example.happihatchihi.frontend;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.happihatchihi.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

@@ -1,4 +1,4 @@
-package com.example.happihatchihi;
+package com.example.happihatchihi.frontend;
 
 import android.os.Bundle;
 
@@ -9,6 +9,8 @@ import androidx.activity.OnBackPressedCallback;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.happihatchihi.R;
 
 /**
  * A simple {@link Fragment} subclass.
