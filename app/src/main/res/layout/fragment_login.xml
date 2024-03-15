@@ -20,16 +20,15 @@
             android:orientation="vertical">
             <Space
 
-                android:layout_height="100dp"
+                android:layout_height="0dp"
                 android:layout_width="0dp"/>
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="331dp"
                 android:layout_height="310dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="60dp"
-                android:src="@drawable/hathchi_logo"
-                />
+                android:src="@drawable/hathchi_logo" />
 
             <EditText
                 android:id="@+id/editTextTextEmailAddress"
