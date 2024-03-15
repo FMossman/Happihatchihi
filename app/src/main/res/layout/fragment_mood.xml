@@ -8,14 +8,130 @@
     tools:context=".MoodFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="mood pop up needed!"
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/lightHatchi"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:topLeftRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        >
+
+        <ImageButton
+            android:id="@+id/veryUnhappyButton"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/lightGraphics"
+            android:src="@drawable/veryunhappy"
+         />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+
+        <ImageButton
+            android:id="@+id/unhappyButton"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/lightGraphics"
+            android:src="@drawable/unhappy"
+            />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+
+        <ImageButton
+            android:id="@+id/happyButton"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/lightGraphics"
+            android:src="@drawable/happy"
+         />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+
+        <ImageButton
+            android:id="@+id/veryHappyButton"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/lightGraphics"
+            android:src="@drawable/veryhappy"
+    />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+        
+
+        <ImageButton
+            android:id="@+id/veryUnhappyButton"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/lightGraphics"
+            android:src="@drawable/veryunhappy" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+
+        <ImageButton
+            android:id="@+id/unhappyButton"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/lightGraphics"
+            android:src="@drawable/unhappy" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+
+        <ImageButton
+            android:id="@+id/happyButton"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/lightGraphics"
+            android:src="@drawable/happy" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+
+        <ImageButton
+            android:id="@+id/veryHappyButton"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/lightGraphics"
+            android:src="@drawable/veryhappy" />
+
+    </LinearLayout>
+
+</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

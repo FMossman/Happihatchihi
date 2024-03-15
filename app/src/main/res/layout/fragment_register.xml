@@ -10,17 +10,7 @@
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
-    <TextView
-        android:id="@+id/fullscreen_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="?attr/fullscreenTextColor"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-
+    
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
     <FrameLayout
@@ -29,21 +19,92 @@
         android:fitsSystemWindows="true">
 
         <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="@style/Widget.Theme.HappiHatchiHi.ButtonBar.Fullscreen"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/dummy_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/dummy_button" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="123dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/hathchi_logo" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Please enter your personal information to get started"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp" />
+
+                <EditText
+                    android:layout_width="300dp"
+                    android:layout_height="48dp"
+                    android:hint="First Name"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <EditText
+                    android:layout_width="300dp"
+                    android:layout_height="48dp"
+                    android:hint="Surname"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <EditText
+                    android:layout_width="300dp"
+                    android:layout_height="48dp"
+                    android:hint="Email"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <EditText
+                    android:layout_width="300dp"
+                    android:layout_height="48dp"
+                    android:hint="Password"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <EditText
+                    android:layout_width="300dp"
+                    android:layout_height="48dp"
+                    android:hint="Confirm Password"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <Button
+                    android:layout_width="300dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Next" />
+            </LinearLayout>
 
         </LinearLayout>
     </FrameLayout>
