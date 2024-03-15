@@ -15,22 +15,10 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Field for holding the bottom navigation
     private BottomNavigationView bottomNavigationView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // Getting rid of tint on navigation buttons
-        bottomNavigationView = findViewById(R.id.bottomNavView);
-        bottomNavigationView.setItemIconTintList(null);
-        bottomNavigationView.setOnItemSelectedListener(itemSelectedListener);
-
-        // Set a default fragment to display
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
-    }
-    private NavigationBarView.OnItemSelectedListener itemSelectedListener =
+    private final NavigationBarView.OnItemSelectedListener itemSelectedListener =
             new NavigationBarView.OnItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -76,6 +64,28 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 }
             };
+
+
+
+
+    // Runs when app is opened
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Connecting to the bottom navigation xml
+        bottomNavigationView = findViewById(R.id.bottomNavView);
+        // Getting rid of tint on navigation buttons
+        bottomNavigationView.setItemIconTintList(null);
+        // Setting up the listener to tell when an icon is clicked
+        bottomNavigationView.setOnItemSelectedListener(itemSelectedListener);
+
+        // Setting the first fragment to display login screen
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
+    }
+
+
 
 
 
