@@ -1,4 +1,4 @@
-package com.example.happihatchihi;
+package com.example.happihatchihi.backend;
 
 public class Goal {
 

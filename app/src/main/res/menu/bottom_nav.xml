@@ -3,21 +3,24 @@
 
     <item
         android:title="Profile"
+        android:enabled="true"
         android:id="@+id/profile"
-        android:icon="@drawable/profile_icon" />
+        android:icon="@drawable/profile_svg" />
 
     <item
         android:title="Stats"
+        android:enabled="true"
         android:id="@+id/stats"
-        android:icon="@drawable/stats_icon" />
+        android:icon="@drawable/stats_svg" />
 
     <item
         android:title="Mood"
+        android:enabled="true"
         android:id="@+id/mood"
-        android:icon="@drawable/mood_icon" />
+        android:icon="@drawable/mood_svg" />
 
     <item
         android:title="Track"
         android:id="@+id/track"
-        android:icon="@drawable/track_icon" />
+        android:icon="@drawable/track_svg" />
 </menu>

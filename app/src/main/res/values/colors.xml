@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Color for the main UI elements -->
+    <color name="colorPrimary">#EB620E</color>
+    <!-- Vibrant primary -->
+    <color name="colorPrimaryVariant">#EB3C0E</color>
+    <!-- Color for lighter parts of hatchi -->
+    <color name="lightHatchi">#f28847</color>
+    <!-- Light main color used in graphics -->
+    <color name="lightGraphics">#fed8c0</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="error">#B00020</color>
+    <color name="black_overlay">#66000000</color>
 </resources>
