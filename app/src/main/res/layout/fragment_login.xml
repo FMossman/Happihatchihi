@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.HappiHatchiHi.FullscreenContainer"
+    tools:context=".frontend.LoginFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+            <Space
+
+                android:layout_height="0dp"
+                android:layout_width="0dp"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="331dp"
+                android:layout_height="310dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/hathchi_logo" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/editTextNumberPassword"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="numberPassword" />
+
+            <TextView
+                android:id="@+id/forgotPasswordTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/forgotmypassword"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_blue_dark" />
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="122.4dp"
+                android:layout_height="62.4dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="100dp"
+                android:textSize="22sp"
+                android:text="Login" />
+
+            <TextView
+                android:id="@+id/RegisterTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/register"
+                android:textColor="@color/lightHatchi"
+                android:textSize="18sp"/>
+
+<!--            <Button-->
+<!--                android:id="@+id/registerButton"-->
+<!--                android:layout_width="130dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Register" />-->
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</FrameLayout>
