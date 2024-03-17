@@ -31,13 +31,13 @@ public class User {
         this.hatchiAlive = true;
         this.hatchiPaused = false;
         this.streakCount = 0;
-        this.Hatchi = new Hatchi;
+        this.Hatchi = new Hatchi();
 
     }
 
     /**
      * Returns the first name of the user.
-     * @return the first name of the user
+     * @return the first name of the user.
      */
     public String getFirstName() {
         return firstName;
@@ -45,7 +45,7 @@ public class User {
 
     /**
      * Sets the first name of the user.
-     * @param firstName the new first name of the user
+     * @param firstName the new first name of the user.
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -53,7 +53,7 @@ public class User {
 
     /**
      * Returns the last name of the user.
-     * @return the last name of the user
+     * @return the last name of the user.
      */
     public String getLastName() {
         return lastName;
@@ -61,7 +61,7 @@ public class User {
 
     /**
      * Sets the last name of the user.
-     * @param lastName the new last name of the user
+     * @param lastName the new last name of the user.
      */
 
     public void setLastName(String lastName) {
@@ -69,7 +69,7 @@ public class User {
     }
 
     /**
-     * @return the username of the user
+     * @return the username of the user.
      */
     public String getUsername() {
         return username;
@@ -77,8 +77,7 @@ public class User {
 
     /**
      * Sets the username of the user.
-     *
-     * @param username the new username of the user
+     * @param username the new username of the user.
      */
     public void setUsername(String username) {
         this.username = username;
@@ -86,8 +85,7 @@ public class User {
 
     /**
      * Returns the password of the user.
-     *
-     * @return the password of the user
+     * @return the password of the user.
      */
     public String getPassword() {
         return password;
@@ -95,8 +93,7 @@ public class User {
 
     /**
      * Sets the password of the user.
-     *
-     * @param password the new password of the user
+     * @param password the new password of the user.
      */
     public void setPassword(String password) {
         this.password = password;
@@ -104,8 +101,7 @@ public class User {
 
     /**
      * Returns the email of the user.
-     *
-     * @return the email of the user
+     * @return the email of the user.
      */
     public String getEmail() {
         return email;
@@ -113,8 +109,7 @@ public class User {
 
     /**
      * Sets the email of the user.
-     *
-     * @param email the new email of the user
+     * @param email the new email of the user.
      */
     public void setEmail(String email) {
         this.email = email;
@@ -122,8 +117,7 @@ public class User {
 
     /**
      * Returns the age of the user.
-     *
-     * @return the age of the user
+     * @return the age of the user.
      */
     public int getAge() {
         return age;
@@ -131,8 +125,7 @@ public class User {
 
     /**
      * Sets the age of the user.
-     *
-     * @param age the new age of the user
+     * @param age the new age of the user.
      */
     public void setAge(int age) {
         this.age = age;
@@ -141,8 +134,7 @@ public class User {
 
     /**
      * Returns the gender of the user.
-     *
-     * @return the gender of the user
+     * @return the gender of the user.
      */
     public String getGender() {
         return gender;
@@ -150,12 +142,89 @@ public class User {
 
     /**
      * Sets the gender of the user.
-     *
-     * @param gender the new gender of the user
+     * @param gender the new gender of the user.
      */
     public void setGender(String gender) {
         this.gender = gender;
     }
 
+    /**
+     * Returns the goals of the user.
+     * @return the goals of the user.
+     */
+    public ArrayList<Goal> getGoals() {
+        return goals;
+    }
+
+    /**
+     * Sets the goals of the user.
+     * @param goals the new goals of the user.
+     */
+    public void setGoals(ArrayList<Goal> goals) {
+        this.goals = goals;
+    }
+
+    /**
+     * Returns the alive status of the user's Hatchi.
+     * @return true/false depending on if the user's Hatchi is alive/dead.
+     */
+    public Boolean getHatchiAlive() {
+        return hatchiAlive;
+    }
+
+    /**
+     * Sets alive status of the user's Hatchi.
+     * @param hatchiAlive the alive status of the Hatchi.
+     */
+    public void setHatchiAlive(Boolean hatchiAlive) {
+        this.hatchiAlive = hatchiAlive;
+    }
+
+    /**
+     * Returns the pause status of the user's Hatchi.
+     * @return true/false depending on if the user's Hatchi is paused/not paused.
+     */
+    public Boolean getHatchiPaused() {
+        return hatchiPaused;
+    }
+
+    /**
+     * Sets pause status of the user's Hatchi.
+     * @param hatchiPaused the pause status of the Hatchi.
+     */
+    public void setHatchiPaused(Boolean hatchiPaused) {
+        this.hatchiPaused = hatchiPaused;
+    }
+
+    /**
+     * Returns the streak count of the user.
+     * @return no. of days of the user has held a streak for.
+     */
+    public int getStreakCount() {
+        return streakCount;
+    }
+
+    /**
+     * Sets streak count of the user.
+     */
+    public void setStreakCount() {
+        streakCount = streakCount++;
+    }
+
+    /**
+     * Returns the Hatchi of the user.
+     * @return the Hatchi of the user.
+     */
+    public Hatchi getHatchi() {
+        return hatchi;
+    }
+
+    /**
+     * Sets the Hatchi of the user.
+     * @param hatchi the Hatchi of the user.
+     */
+    public void setHatchi(Hatchi hatchi) {
+        this.hatchi = hatchi;
+    }
 }
 
