@@ -6,18 +6,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-
 import androidx.fragment.app.Fragment;
-
 import com.example.happihatchihi.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
 
     // Field for holding the bottom navigation
     private BottomNavigationView bottomNavigationView;
+
+    //
+    private List<Integer> iconList = new ArrayList<>();
+    private List<Integer> iconSelectedList = new ArrayList<>();
+
 
     private final NavigationBarView.OnItemSelectedListener itemSelectedListener =
             new NavigationBarView.OnItemSelectedListener() {
@@ -27,35 +32,31 @@ public class MainActivity extends AppCompatActivity {
                     if (menuItem.getItemId() == R.id.profile) {
                         selectedFragment = new ProfileFragment();
                         menuItem.setIcon(R.drawable.profile_selected);
-
-                        bottomNavigationView.getMenu().findItem(R.id.mood).setIcon(R.drawable.mood_icon);
-                        bottomNavigationView.getMenu().findItem(R.id.stats).setIcon(R.drawable.stats_svg);
-                        bottomNavigationView.getMenu().findItem(R.id.track).setIcon(R.drawable.track_icon);
+                        resetMoodIcon();
+                        resetStatsIcon();
+                        resetTrackIcon();
 
 
                     } else if (menuItem.getItemId() == R.id.stats) {
                         selectedFragment = new StatsFragment();
                         menuItem.setIcon(R.drawable.stats_selected);
-
-                        bottomNavigationView.getMenu().findItem(R.id.mood).setIcon(R.drawable.mood_icon);
-                        bottomNavigationView.getMenu().findItem(R.id.profile).setIcon(R.drawable.profile_icon);
-                        bottomNavigationView.getMenu().findItem(R.id.track).setIcon(R.drawable.track_icon);
+                        resetMoodIcon();
+                        resetProfileIcon();
+                        resetTrackIcon();
 
                     } else if (menuItem.getItemId() == R.id.mood) {
                         selectedFragment = new MoodFragment();
                         menuItem.setIcon(R.drawable.mood_selected);
-
-                        bottomNavigationView.getMenu().findItem(R.id.profile).setIcon(R.drawable.profile_icon);
-                        bottomNavigationView.getMenu().findItem(R.id.stats).setIcon(R.drawable.stats_svg);
-                        bottomNavigationView.getMenu().findItem(R.id.track).setIcon(R.drawable.track_icon);
+                        resetProfileIcon();
+                        resetStatsIcon();
+                        resetTrackIcon();
 
                     } else if (menuItem.getItemId() == R.id.track) {
                         selectedFragment = new TrackFragment();
                         menuItem.setIcon(R.drawable.track_selected);
-
-                        bottomNavigationView.getMenu().findItem(R.id.mood).setIcon(R.drawable.mood_icon);
-                        bottomNavigationView.getMenu().findItem(R.id.stats).setIcon(R.drawable.stats_svg);
-                        bottomNavigationView.getMenu().findItem(R.id.profile).setIcon(R.drawable.profile_icon);
+                        resetMoodIcon();
+                        resetStatsIcon();
+                        resetProfileIcon();
                     }
 
                     if (selectedFragment != null) {
@@ -66,6 +67,22 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
+    private void resetProfileIcon() {
+        bottomNavigationView.getMenu().findItem(R.id.profile).setIcon(R.drawable.profile_svg);
+    }
+
+    private void resetStatsIcon() {
+        bottomNavigationView.getMenu().findItem(R.id.stats).setIcon(R.drawable.stats_svg);
+    }
+
+    private void resetMoodIcon() {
+        bottomNavigationView.getMenu().findItem(R.id.mood).setIcon(R.drawable.mood_svg);
+    }
+
+    private void resetTrackIcon() {
+        bottomNavigationView.getMenu().findItem(R.id.track).setIcon(R.drawable.track_svg);
+    }
+
 
 
 
@@ -74,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         // Connecting to the bottom navigation xml
         bottomNavigationView = findViewById(R.id.bottomNavView);

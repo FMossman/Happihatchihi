@@ -2,7 +2,8 @@
     android:width="480dp"
     android:height="480dp"
     android:viewportWidth="480"
-    android:viewportHeight="480">
+    android:viewportHeight="480"
+    android:id="@+id/water">
   <group>
     <clip-path
         android:pathData="m0,0l480,0l0,480l-480,0l0,-480z"/>
