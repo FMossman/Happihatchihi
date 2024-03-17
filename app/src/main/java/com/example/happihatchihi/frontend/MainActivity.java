@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             };
 
     private void resetProfileIcon() {
-        bottomNavigationView.getMenu().findItem(R.id.profile).setIcon(R.drawable.profile_icon);
+        bottomNavigationView.getMenu().findItem(R.id.profile).setIcon(R.drawable.profile_svg);
     }
 
     private void resetStatsIcon() {
@@ -76,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void resetMoodIcon() {
-        bottomNavigationView.getMenu().findItem(R.id.mood).setIcon(R.drawable.mood_icon);
+        bottomNavigationView.getMenu().findItem(R.id.mood).setIcon(R.drawable.mood_svg);
     }
 
     private void resetTrackIcon() {
-        bottomNavigationView.getMenu().findItem(R.id.track).setIcon(R.drawable.track_icon);
+        bottomNavigationView.getMenu().findItem(R.id.track).setIcon(R.drawable.track_svg);
     }
 
 

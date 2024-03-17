@@ -126,5 +126,9 @@ public class Goal {
         return goalList;
     }
 
-
+    public void addProgress(){
+        if(this.goalProgress < this.goalQuantity) {
+            this.goalProgress++;
+        }
+    }
 }
