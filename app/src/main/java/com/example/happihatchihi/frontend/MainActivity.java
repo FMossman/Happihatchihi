@@ -3,9 +3,13 @@ package com.example.happihatchihi.frontend;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupWindow;
+
 import androidx.fragment.app.Fragment;
 import com.example.happihatchihi.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,9 +23,6 @@ public class MainActivity extends AppCompatActivity {
     // Field for holding the bottom navigation
     private BottomNavigationView bottomNavigationView;
 
-    //
-    private List<Integer> iconList = new ArrayList<>();
-    private List<Integer> iconSelectedList = new ArrayList<>();
 
 
     private final NavigationBarView.OnItemSelectedListener itemSelectedListener =
@@ -52,11 +53,16 @@ public class MainActivity extends AppCompatActivity {
                         resetTrackIcon();
 
                     } else if (menuItem.getItemId() == R.id.track) {
-                        selectedFragment = new TrackFragment();
+                        selectedFragment = new MainFragment();
                         menuItem.setIcon(R.drawable.track_selected);
                         resetMoodIcon();
                         resetStatsIcon();
                         resetProfileIcon();
+                        View popupView = getLayoutInflater().inflate(R.layout.track_pop_up, null);
+
+                        // Create a popup dialog
+                        PopupWindow trackPopUp = new PopupWindow (popupView);
+
                     }
 
                     if (selectedFragment != null) {
@@ -105,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView.setVisibility(View.GONE);
 
-        //bottomNavigationView.visibility = View.VISIBLE
+
 
         }
     }
