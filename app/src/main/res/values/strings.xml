@@ -2,4 +2,13 @@
     <string name="app_name">HappiHatchiHi</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="register"><u>Register</u></string>
+    <string name="forgotmypassword"><u>Forgot My Password</u></string>
+    <string name="Water"><u>Water</u></string>
+    <string name="progress">0</string>
+    <string name="quantity">5</string>
+    <!-- need to reference progess and quantity -->
+    <string name="goal_row_progress">%1$s / %2$s</string>
 </resources>

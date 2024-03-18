@@ -3,7 +3,64 @@
     <style name="Base.Theme.HappiHatchiHi" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorSecondary">@color/lightGraphics</item>
+        <item name="colorSecondaryVariant">@color/lightHatchi</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSecondary">@color/colorPrimary</item>
+        <item name="colorOnSurface">@color/colorPrimary</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="editTextStyle">@style/HatchiEditTextStyle</item>
     </style>
 
     <style name="Theme.HappiHatchiHi" parent="Base.Theme.HappiHatchiHi" />
+
+    <style name="ThemeOverlay.HappiHatchiHi.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/white</item>
+        <item name="fullscreenTextColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="HatchiEditTextStyle" parent="Widget.AppCompat.EditText">
+        <!-- Customised theme for inputing text -->
+        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:paddingLeft">16dp</item>
+    </style>
+
+    <style name="BoldTextViewStyleOnWhite" parent="Widget.AppCompat.TextView">
+        <!-- Customised theme for main bold text on white -->
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30dp</item>
+    </style>
+
+    <style name="SmallerTextViewStyleOnWhite" parent="Widget.AppCompat.TextView">
+        <!-- Customised theme for main bold text on white -->
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:paddingLeft">22dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BottomNavStyle" parent="Widget.Design.BottomNavigationView">
+        <item name="android:layout_height">80dp</item>
+        <item name="itemBackground">@color/white</item>
+        <item name="itemIconSize">36dp</item>
+        <item name="itemIconTint">@color/colorPrimary</item>
+        <item name="itemPaddingBottom">10dp</item>
+        <item name="itemPaddingTop">10dp</item>
+        <item name="itemTextColor">@color/colorPrimary</item>
+        <item name="labelVisibilityMode">unlabeled</item>
+        <item name="android:animateOnClick">false</item>
+    </style>
+
+    <style name="GoalRadioButtonStyle">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
 </resources>
+
