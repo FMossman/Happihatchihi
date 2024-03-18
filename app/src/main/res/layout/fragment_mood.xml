@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MoodFragment">
+    tools:context=".frontend.MoodFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -75,63 +75,8 @@
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/lightGraphics"
             android:src="@drawable/veryhappy"
-    />
+        />
 
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-        
-
-        <ImageButton
-            android:id="@+id/veryUnhappyButton"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_corners"
-            android:backgroundTint="@color/lightGraphics"
-            android:src="@drawable/veryunhappy" />
-
-        <Space
-            android:layout_width="8dp"
-            android:layout_height="8dp" />
-
-        <ImageButton
-            android:id="@+id/unhappyButton"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_corners"
-            android:backgroundTint="@color/lightGraphics"
-            android:src="@drawable/unhappy" />
-
-        <Space
-            android:layout_width="8dp"
-            android:layout_height="8dp" />
-
-        <ImageButton
-            android:id="@+id/happyButton"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_corners"
-            android:backgroundTint="@color/lightGraphics"
-            android:src="@drawable/happy" />
-
-        <Space
-            android:layout_width="8dp"
-            android:layout_height="8dp" />
-
-        <ImageButton
-            android:id="@+id/veryHappyButton"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_corners"
-            android:backgroundTint="@color/lightGraphics"
-            android:src="@drawable/veryhappy" />
-
-    </LinearLayout>
-
-</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

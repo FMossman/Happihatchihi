@@ -31,8 +31,22 @@
         <item name="android:paddingLeft">16dp</item>
     </style>
 
+    <style name="BoldTextViewStyleOnWhite" parent="Widget.AppCompat.TextView">
+        <!-- Customised theme for main bold text on white -->
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30dp</item>
+    </style>
+
+    <style name="SmallerTextViewStyleOnWhite" parent="Widget.AppCompat.TextView">
+        <!-- Customised theme for main bold text on white -->
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:paddingLeft">22dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="BottomNavStyle" parent="Widget.Design.BottomNavigationView">
-        <!-- Customize attributes here -->
         <item name="android:layout_height">80dp</item>
         <item name="itemBackground">@color/white</item>
         <item name="itemIconSize">36dp</item>
@@ -42,8 +56,10 @@
         <item name="itemTextColor">@color/colorPrimary</item>
         <item name="labelVisibilityMode">unlabeled</item>
         <item name="android:animateOnClick">false</item>
+    </style>
 
-        <!-- Add more customizations here -->
+    <style name="GoalRadioButtonStyle">
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
 </resources>
