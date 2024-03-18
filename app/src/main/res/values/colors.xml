@@ -6,6 +6,7 @@
     <color name="colorPrimaryVariant">#EB3C0E</color>
     <!-- Color for lighter parts of hatchi -->
     <color name="lightHatchi">#f28847</color>
+    <color name="lightHatchiTransparent">#CCf28847</color>
     <!-- Light main color used in graphics -->
     <color name="lightGraphics">#fed8c0</color>
     <color name="black">#FF000000</color>
