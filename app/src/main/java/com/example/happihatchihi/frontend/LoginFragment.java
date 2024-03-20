@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 import com.example.happihatchihi.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -77,6 +81,21 @@ public class LoginFragment extends Fragment {
             }
         });
         
+        final TextView registerTextView = view.findViewById(R.id.RegisterTextView);
+        registerTextView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new RegisterFragment()).commit();
+            }
+        });
+
+        final TextView forgotPasswordTextView = view.findViewById(R.id.forgotPasswordTextView);
+        forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new PasswordResetFragment()).commit();
+            }
+        });
+        
+
         final TextView registerTextView = view.findViewById(R.id.RegisterTextView);
         registerTextView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

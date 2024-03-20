@@ -8,6 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+<<<<<<< Updated upstream:app/src/main/java/com/example/happihatchihi/MainFragment.java
+=======
+import com.example.happihatchihi.R;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+>>>>>>> Stashed changes:app/src/main/java/com/example/happihatchihi/frontend/RegisterFragment.java
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link MainFragment#newInstance} factory method to
@@ -60,5 +68,31 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false);
+    }
+
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        EditText editTextPassword = view.findViewById(R.id.editTextPassword);
+        EditText editTextConfirmPassword = view.findViewById(R.id.editTextConfirmPassword);
+        Button registerButton = view.findViewById(R.id.registerButton);
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String password = editTextPassword.getText().toString();
+                String confirmPassword = editTextConfirmPassword.getText().toString();
+
+                if (!password.equals(confirmPassword)) {
+                    Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Passwords match, perform further actions
+                    Toast.makeText(getActivity(), "Account created", Toast.LENGTH_SHORT).show();
+                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
+                }
+            }
+        });
     }
 }
