@@ -1,10 +1,5 @@
-<<<<<<< HEAD:app/src/main/java/com/example/happihatchihi/User.java
-package com.example.happihatchihi;
-import java.util.ArrayList;
-=======
 package com.example.happihatchihi.backend;
-
->>>>>>> d1b9cb94624d420b2f70787f57fb91f8cfeb6dff:app/src/main/java/com/example/happihatchihi/backend/User.java
+import java.util.ArrayList;
 
 /**
  * The User class represents a user in the system.
@@ -22,7 +17,7 @@ public class User {
     private Boolean hatchiAlive;
     private Boolean hatchiPaused;
     private int streakCount;
-    private Hatchi hatchi;
+    /** private Hatchi hatchi; */
 
     public User(String username, String password, String email, int age, String gender, String firstName, String lastName) {
         this.username = username;
@@ -36,7 +31,7 @@ public class User {
         this.hatchiAlive = true;
         this.hatchiPaused = false;
         this.streakCount = 0;
-        this.Hatchi = new Hatchi();
+        /**this.Hatchi = new Hatchi();*/
 
     }
 
@@ -219,260 +214,17 @@ public class User {
     /**
      * Returns the Hatchi of the user.
      * @return the Hatchi of the user.
-     */
+
     public Hatchi getHatchi() {
         return hatchi;
     }
 
     /**
      * Sets the Hatchi of the user.
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
      * @param hatchi the Hatchi of the user.
-     */
+
     public void setHatchi(Hatchi hatchi) {
         this.hatchi = hatchi;
-    }
+    } */
 }
 
