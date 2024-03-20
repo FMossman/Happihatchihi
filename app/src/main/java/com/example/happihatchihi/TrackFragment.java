@@ -8,13 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-<<<<<<< Updated upstream:app/src/main/java/com/example/happihatchihi/TrackFragment.java
-=======
 import com.example.happihatchihi.R;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
->>>>>>> Stashed changes:app/src/main/java/com/example/happihatchihi/frontend/RegisterFragment.java
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link TrackFragment#newInstance} factory method to
