@@ -1,10 +1,12 @@
-<<<<<<< HEAD:app/src/main/java/com/example/happihatchihi/User.java
+
 package com.example.happihatchihi;
+import com.example.happihatchihi.backend.Goal;
+import com.example.happihatchihi.backend.Hatchi;
+
 import java.util.ArrayList;
-=======
 package com.example.happihatchihi.backend;
 
->>>>>>> d1b9cb94624d420b2f70787f57fb91f8cfeb6dff:app/src/main/java/com/example/happihatchihi/backend/User.java
+
 
 /**
  * The User class represents a user in the system.
