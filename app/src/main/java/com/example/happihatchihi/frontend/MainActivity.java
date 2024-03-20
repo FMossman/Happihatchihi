@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.PopupWindow;
 
 import androidx.fragment.app.Fragment;
@@ -58,11 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         resetMoodIcon();
                         resetStatsIcon();
                         resetProfileIcon();
-                        View popupView = getLayoutInflater().inflate(R.layout.track_pop_up, null);
-
-                        // Create a popup dialog
-                        PopupWindow trackPopUp = new PopupWindow (popupView);
-
+                        showTrackPopup();
                     }
 
                     if (selectedFragment != null) {
@@ -72,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 }
             };
+
+    private void showTrackPopup() {
+        TrackPopupFragment trackPopupFragment = new TrackPopupFragment();
+        trackPopupFragment.show(getSupportFragmentManager(), "track_popup_fragment");
+    }
 
     private void resetProfileIcon() {
         bottomNavigationView.getMenu().findItem(R.id.profile).setIcon(R.drawable.profile_svg);
