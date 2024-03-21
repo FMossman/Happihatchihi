@@ -5,9 +5,8 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".frontend.MoodFragment">
+    tools:context=".frontend.MainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
         android:layout_width="350dp"
@@ -31,7 +30,7 @@
             android:layout_height="65dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_corners"
-            android:backgroundTint="@color/lightGraphics"
+
             android:src="@drawable/veryunhappy"
          />
 
@@ -45,7 +44,7 @@
             android:layout_height="65dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_corners"
-            android:backgroundTint="@color/lightGraphics"
+
             android:src="@drawable/unhappy"
             />
 
@@ -59,7 +58,7 @@
             android:layout_height="65dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_corners"
-            android:backgroundTint="@color/lightGraphics"
+
             android:src="@drawable/happy"
          />
 
@@ -73,7 +72,7 @@
             android:layout_height="65dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_corners"
-            android:backgroundTint="@color/lightGraphics"
+
             android:src="@drawable/veryhappy"
         />
 

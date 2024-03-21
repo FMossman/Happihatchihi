@@ -11,4 +11,7 @@
     <string name="quantity">5</string>
     <!-- need to reference progess and quantity -->
     <string name="goal_row_progress">%1$s / %2$s</string>
+    <string name="previous_track" />
+    <string name="play" />
+    <string name="next_track" />
 </resources>

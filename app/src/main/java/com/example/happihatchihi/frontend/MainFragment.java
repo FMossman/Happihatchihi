@@ -1,5 +1,6 @@
 package com.example.happihatchihi.frontend;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.happihatchihi.R;
 
@@ -51,16 +54,31 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+       // startAnimateHatchi();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false);
+
+
     }
+/**
+ * Not working yet
+    public void startAnimateHatchi(){
+        ImageButton button = (ImageButton)getActivity().findViewById(R.id.hatchiImgBtn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button.setBackgroundResource(R.drawable.hatchi_animation_4);
+                AnimationDrawable frameAnimation = (AnimationDrawable) button.getBackground();
+                frameAnimation.start();
+            }
+        });
+
+    }
+ **/
 }
