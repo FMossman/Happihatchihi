@@ -1,6 +1,9 @@
+
+
 plugins {
     id("com.android.application")
 }
+
 
 android {
     namespace = "com.example.happihatchihi"
@@ -48,3 +51,4 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
 }
+

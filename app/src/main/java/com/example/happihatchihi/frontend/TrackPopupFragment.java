@@ -2,12 +2,15 @@ package com.example.happihatchihi.frontend;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,13 +33,43 @@ public class TrackPopupFragment extends DialogFragment {
 
         setStyle(DialogFragment.STYLE_NO_TITLE, android.R.style.Theme_DeviceDefault_Light_Dialog_NoActionBar);
 
+
         View mainView = inflater.inflate(R.layout.track_pop_up, container, false);
+        View rowView = inflater.inflate(R.layout.goal_row, container, false);
         RecyclerView recyclerView = mainView.findViewById(R.id.goal_recycler_view);
 
         adapter = new TrackPopupAdapter();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
+
+        Button doneBtn = mainView.findViewById(R.id.doneBtn);
+        Button startBtn = rowView.findViewById(R.id.startBtn);
+
+        doneBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * A method to close the track popup if done is clicked
+             *
+             * @param v     The view of the button that has been clicked
+             */
+            public void onClick(View v) {
+                MainActivity mainAct = (MainActivity) getActivity();
+                mainAct.resetTrackIcon();
+            }
+        });
+
+        startBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * A method to close the track popup if done is clicked
+             *
+             * @param v     The view of the button that has been clicked
+             */
+            public void onClick(View v) {
+                launchMeditate();
+            }
+        });
+
+
 
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
@@ -49,6 +82,13 @@ public class TrackPopupFragment extends DialogFragment {
         });
         return mainView;
     }
+
+    public void launchMeditate(){
+        Intent i = new Intent(getActivity(), Meditation.class);
+        startActivity(i);
+    }
+
+
 
 
 }

@@ -67,6 +67,7 @@ public class MainFragment extends Fragment {
 
     }
 /**
+ * Not working yet
     public void startAnimateHatchi(){
         ImageButton button = (ImageButton)getActivity().findViewById(R.id.hatchiImgBtn);
         button.setOnClickListener(new View.OnClickListener() {

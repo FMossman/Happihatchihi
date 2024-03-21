@@ -36,7 +36,7 @@
         <item name="android:textColor">@color/colorPrimary</item>
 
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">18dp</item>
     </style>
 
     <style name="SmallerTextViewStyleOnWhite" parent="Widget.AppCompat.TextView">
