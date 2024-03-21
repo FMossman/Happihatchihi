@@ -12,6 +12,7 @@ import java.util.ArrayList;
  */
 public class Goal {
 
+    private ArrayList<HatchiWarning> warnings;
     // int to hold the name of the goal (could be user created or default)
     private String name;
     // int to hold the icon for a goal
@@ -21,7 +22,7 @@ public class Goal {
     // int to show how many times user have met goal
     private int goalProgress;
     // String to show if goal is daily or weekly
-    private ArrayList<HatchiWarning> warnings;
+    //private ArrayList<HatchiWarning> warnings;
     // String to how whether gaol is one of built in types or user created
     private String type;
     // String to hold whether the goal is daily, weekly or monthly

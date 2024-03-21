@@ -2,7 +2,7 @@
 package com.example.happihatchihi.backend;
 import java.util.ArrayList;
 
-package com.example.happihatchihi;
+//package com.example.happihatchihi;
 import com.example.happihatchihi.backend.Goal;
 import com.example.happihatchihi.backend.Hatchi;
 
