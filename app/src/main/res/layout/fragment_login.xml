@@ -41,14 +41,14 @@
                 android:inputType="textEmailAddress" />
 
             <EditText
-                android:id="@+id/editTextNumberPassword"
+                android:id="@+id/editTextPassword"
                 android:layout_width="300dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:hint="Password"
-                android:inputType="numberPassword" />
+                android:inputType="textPassword" />
 
             <TextView
                 android:id="@+id/forgotPasswordTextView"
