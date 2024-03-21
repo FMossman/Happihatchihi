@@ -4,6 +4,11 @@ package com.example.happihatchihi.backend;
 import java.util.ArrayList;
 
 
+//package com.example.happihatchihi;
+import com.example.happihatchihi.backend.Goal;
+import com.example.happihatchihi.backend.Hatchi;
+
+
 
 /**
  * The User class represents a user in the system.
@@ -35,6 +40,9 @@ public class User {
         this.streakCount = 0;
         this.hatchi = new Hatchi();
 
+    }
+
+    public User(String username, String password) {
     }
 
     /**
