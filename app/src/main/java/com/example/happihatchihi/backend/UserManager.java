@@ -71,9 +71,9 @@ public class UserManager {
      * @param password The password of the new user.
      * @return The newly created User object.
      */
-    public User createUser(String username, String password) {
-        User newUser = new User(username, password);
-        users.put(username, newUser);
-        return newUser;
-    }
+    //public User createUser(String username, String password) {
+      //  User newUser = new User();
+        //users.put(username, newUser);
+        //return newUser;
+    //}
 }

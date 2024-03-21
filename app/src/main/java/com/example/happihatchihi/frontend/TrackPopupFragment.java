@@ -52,7 +52,6 @@ public class TrackPopupFragment extends DialogFragment {
              */
             public void onClick(View v) {
                 MainActivity mainAct = (MainActivity) getActivity();
-                mainView.;
                 mainAct.resetTrackIcon();
             }
         });
