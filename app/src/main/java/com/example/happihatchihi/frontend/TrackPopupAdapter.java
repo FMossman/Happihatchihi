@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
         public TextView goalNameTextView;
         public TextView goalProgressTextView;
         public RadioButton goalSelector;
+        public Button startBtn;
 
         TrackPopupViewHolder(View item) {
             super(item);
@@ -34,7 +36,7 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
             goalNameTextView = item.findViewById(R.id.goalNameTxt);
             goalProgressTextView = item.findViewById(R.id.goalProgressTxt);
             goalSelector = item.findViewById(R.id.goalRadiobtn);
-
+            startBtn = item.findViewById(R.id.startBtn);
         }
     }
 
@@ -77,6 +79,13 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
         holder.goalProgressTextView.setText(String.valueOf(current.getGoalProgress()));
         int colorPrimary = ContextCompat.getColor(holder.itemView.getContext(),R.color.colorPrimary);
         holder.goalSelector.setButtonTintList(ColorStateList.valueOf(colorPrimary));
+
+        if (current.getType().equals("meditation")) {
+            holder.startBtn.setVisibility(View.VISIBLE);
+        } else {
+            holder.startBtn.setVisibility(View.GONE);
+        }
+
     }
 
     public void updateGoals(List<Goal> newGoalList) {

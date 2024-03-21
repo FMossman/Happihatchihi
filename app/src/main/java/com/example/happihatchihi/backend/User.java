@@ -1,7 +1,5 @@
 package com.example.happihatchihi.backend;
 
-import com.example.happihatchihi.backend.Goal;
-import com.example.happihatchihi.backend.Hatchi;
 
 import java.util.ArrayList;
 
@@ -23,7 +21,7 @@ public class User {
     private Boolean hatchiAlive;
     private Boolean hatchiPaused;
     private int streakCount;
-    /** private Hatchi hatchi; */
+    private Hatchi hatchi;
 
     public User(String username, String password, String email, int age, String gender, String firstName, String lastName) {
         this.username = username;
