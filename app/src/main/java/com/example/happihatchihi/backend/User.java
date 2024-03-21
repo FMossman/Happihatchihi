@@ -1,10 +1,10 @@
-
 package com.example.happihatchihi.backend;
-import java.util.ArrayList;
 
-package com.example.happihatchihi;
 import com.example.happihatchihi.backend.Goal;
 import com.example.happihatchihi.backend.Hatchi;
+
+import java.util.ArrayList;
+
 
 
 /**
@@ -37,7 +37,7 @@ public class User {
         this.hatchiAlive = true;
         this.hatchiPaused = false;
         this.streakCount = 0;
-        /**this.Hatchi = new Hatchi();*/
+        this.hatchi = new Hatchi();
 
     }
 

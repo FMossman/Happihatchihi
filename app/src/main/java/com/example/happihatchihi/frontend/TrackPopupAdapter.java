@@ -40,22 +40,18 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
 
     private List<Goal> goalList = Arrays.asList(
             new Goal("Water",
-                    R.drawable.water,
                     5,
                     "water",
                     "daily"),
             new Goal("Fruit",
-                    R.drawable.health,
                     5,
                     "fruit",
                     "daily"),
             new Goal("Meditation",
-                    R.drawable.meditation,
                     2,
                     "meditation",
                     "weekly"),
             new Goal("Water Plants",
-                    R.drawable.target,
                     1,
                     "createyourown",
                     "weekly")
@@ -75,7 +71,8 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
     @Override
     public void onBindViewHolder(@NonNull TrackPopupViewHolder holder, int position) {
         Goal current = goalList.get(position);
-        holder.goalIcon.setImageResource(current.getIconId());
+        int icon = getGoalIcon(current);
+        holder.goalIcon.setImageResource(icon);
         holder.goalNameTextView.setText(current.getName());
         holder.goalProgressTextView.setText(String.valueOf(current.getGoalProgress()));
         int colorPrimary = ContextCompat.getColor(holder.itemView.getContext(),R.color.colorPrimary);
@@ -85,6 +82,22 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
     public void updateGoals(List<Goal> newGoalList) {
         goalList = newGoalList;
         notifyDataSetChanged();
+    }
+
+    public int getGoalIcon(Goal current) {
+        if (current.getType().equals("water")) {
+            return R.drawable.water;
+        }
+        else if(current.getType().equals("fruit")) {
+            return R.drawable.health;
+        }
+        else if(current.getType().equals("meditation")) {
+            return R.drawable.meditation;
+        }
+        else {
+            return R.drawable.target;
+        }
+
     }
 
     @Override
