@@ -28,12 +28,10 @@ public class User {
     private int streakCount;
     private Hatchi hatchi;
 
-    public User(String username, String password, String email, int age, String gender, String firstName, String lastName) {
+    public User(String username, String password, String email, String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.age = age;
-        this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
         this.goals = new ArrayList<>();
