@@ -14,4 +14,8 @@
     <string name="previous_track" />
     <string name="play" />
     <string name="next_track" />
+    <string name="select_the_goals_you_would_like_to_track">Select the goals you would like to track</string>
+    <string name="fruit_amp_veg"><![CDATA[Fruit & Veg]]></string>
+    <string name="meditation">Meditation</string>
+    <string name="waterinit">Water</string>
 </resources>
