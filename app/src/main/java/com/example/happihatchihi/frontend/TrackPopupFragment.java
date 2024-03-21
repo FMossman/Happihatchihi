@@ -26,8 +26,6 @@ public class TrackPopupFragment extends DialogFragment {
 
     private TrackPopupAdapter adapter;
 
-
-
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
@@ -54,6 +52,7 @@ public class TrackPopupFragment extends DialogFragment {
              */
             public void onClick(View v) {
                 MainActivity mainAct = (MainActivity) getActivity();
+                mainView.;
                 mainAct.resetTrackIcon();
             }
         });
@@ -64,8 +63,10 @@ public class TrackPopupFragment extends DialogFragment {
              *
              * @param v     The view of the button that has been clicked
              */
+            @Override
             public void onClick(View v) {
-                launchMeditate();
+                Intent i = new Intent(getActivity(), Meditation.class);
+                startActivity(i);
             }
         });
 
@@ -83,10 +84,7 @@ public class TrackPopupFragment extends DialogFragment {
         return mainView;
     }
 
-    public void launchMeditate(){
-        Intent i = new Intent(getActivity(), Meditation.class);
-        startActivity(i);
-    }
+
 
 
 
