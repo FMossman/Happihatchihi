@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class Goal {
 
+    private ArrayList<HatchiWarning> warnings;
     // int to hold the name of the goal (could be user created or default)
     private String name;
     // int to show the quantity of the goal the user is aiming for
