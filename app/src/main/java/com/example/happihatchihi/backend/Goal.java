@@ -12,13 +12,20 @@ import java.util.ArrayList;
  */
 public class Goal {
 
+    // int to hold the name of the goal (could be user created or default)
     private String name;
+    // int to hold the icon for a goal
     private int iconId;
+    // int to show the quantity of the goal the user is aiming for
     private int goalQuantity;
+    // int to show how many times user have met goal
     private int goalProgress;
-    private ArrayList<Notification> notifications;
+    // String to show if goal is daily or weekly
+    private ArrayList<HatchiWarning> warnings;
+    // String to how whether gaol is one of built in types or user created
     private String type;
-    private String duration;
+    // String to hold whether the goal is daily, weekly or monthly
+    private String recurrence;
 
     /**
      * Constructor takes four parameters - name, iconId,
@@ -28,20 +35,20 @@ public class Goal {
      * @param iconId
      * @param goalQuantity
      * @param type
-     * @param duration
+     * @param recurrence
      */
 
     public Goal(String name,
                 int iconId,
                 int goalQuantity,
                 String type,
-                String duration) {
+                String recurrence) {
         this.name = name;
         this.iconId = iconId;
         this.goalQuantity = goalQuantity;
         this.type = type;
-        this.duration = duration;
-        this.notifications = new ArrayList<>();
+        this.recurrence = recurrence;
+        this.warnings = new ArrayList<>();
         this.goalProgress = 0;
     }
 
@@ -77,12 +84,12 @@ public class Goal {
         this.goalProgress = goalProgress;
     }
 
-    public ArrayList<Notification> getNotifications() {
-        return notifications;
+    public ArrayList<HatchiWarning> getWarnings() {
+        return warnings;
     }
 
-    public void setNotifications(ArrayList<Notification> notifications) {
-        this.notifications = notifications;
+    public void setWarnings(ArrayList<HatchiWarning> warnings) {
+        this.warnings = warnings;
     }
 
     public String getType() {
@@ -93,12 +100,12 @@ public class Goal {
         this.type = type;
     }
 
-    public String getDuration() {
-        return duration;
+    public String getRecurrence() {
+        return recurrence;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
+    public void setRecurrence(String recurrence) {
+        this.recurrence = recurrence;
     }
 
     public ArrayList<Goal> generateGoals() {
