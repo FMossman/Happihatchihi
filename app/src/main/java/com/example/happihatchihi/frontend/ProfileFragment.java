@@ -1,16 +1,20 @@
 package com.example.happihatchihi.frontend;
 
+import android.app.Activity;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.activity.OnBackPressedCallback;
+import androidx.fragment.app.FragmentManager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.happihatchihi.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,18 +70,21 @@ public class ProfileFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        // This is an example of handling back button press event
-        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) {
-            @Override
-            public void handleOnBackPressed() {
-                // Your code here
-                // For example:
-                // Perform some action or navigate back to the previous fragment/activity
-            }
-        });
-    }
+//    final Button button = view.findViewById(R.id.backButton);
+//            button.setOnClickListener(new View.OnClickListener() {
+//                public void onClick(View v) {
+//                    // Replace the current fragment with the MainFragment
+//                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
+//                    // Show the bottom navigation view
+//                    BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+//                    bottomNavigationView.setVisibility(View.VISIBLE);
+//                }
+//            });
+//
+//
+//        };
+    
+                    
 }
+        
+    

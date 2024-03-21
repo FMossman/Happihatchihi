@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.util.Patterns;
 import com.example.happihatchihi.R;
 import android.widget.Button;
 import android.widget.EditText;
@@ -74,20 +74,25 @@ public class RegisterFragment extends Fragment {
         EditText editTextPassword = view.findViewById(R.id.editTextPassword);
         EditText editTextConfirmPassword = view.findViewById(R.id.editTextConfirmPassword);
         Button registerButton = view.findViewById(R.id.registerButton);
+        EditText editTextEmailAddress = view.findViewById(R.id.editTextEmailAddress);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String password = editTextPassword.getText().toString();
                 String confirmPassword = editTextConfirmPassword.getText().toString();
+                String email = editTextEmailAddress.getText().toString();
 
-                if (!password.equals(confirmPassword)) {
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    Toast.makeText(getActivity(), "Please enter a valid email address", Toast.LENGTH_SHORT).show();
+                } else if (!password.equals(confirmPassword)) {
                     Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
                 } else {
                     // Passwords match, perform further actions
                     Toast.makeText(getActivity(), "Account created", Toast.LENGTH_SHORT).show();
                     getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
                 }
+
             }
         });
     }

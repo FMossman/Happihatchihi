@@ -15,8 +15,6 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private int age;
-    private String gender;
     private String firstName;
     private String lastName;
     private ArrayList<Goal> goals;
@@ -29,8 +27,6 @@ public class User {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.age = age;
-        this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
         this.goals = new ArrayList<>();
@@ -42,6 +38,9 @@ public class User {
     }
 
     public User(String username, String password) {
+    }
+
+    public User(String username, String password, String firstName, String lastName, String email) {
     }
 
     /**
@@ -122,39 +121,6 @@ public class User {
      */
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    /**
-     * Returns the age of the user.
-     * @return the age of the user.
-     */
-    public int getAge() {
-        return age;
-    }
-
-    /**
-     * Sets the age of the user.
-     * @param age the new age of the user.
-     */
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-
-    /**
-     * Returns the gender of the user.
-     * @return the gender of the user.
-     */
-    public String getGender() {
-        return gender;
-    }
-
-    /**
-     * Sets the gender of the user.
-     * @param gender the new gender of the user.
-     */
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 
     /**

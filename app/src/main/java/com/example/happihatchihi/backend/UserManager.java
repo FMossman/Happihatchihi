@@ -66,13 +66,16 @@ public class UserManager {
     }
 
     /**
-     * Creates a new user with the given username and password, and adds it to the collection of users.
+     * Creates a new user with the given parameters, and adds it to the collection of users.
      * @param username The username of the new user.
      * @param password The password of the new user.
+     * @param firstName The first name of the new user.
+     * @param lastName The last name of the new user.
+     * @param email The email of the new user.
      * @return The newly created User object.
      */
-    public User createUser(String username, String password) {
-        User newUser = new User(username, password);
+    public User createUser(String username, String password, String firstName, String lastName, String email) {
+        User newUser = new User(username, password, firstName, lastName, email);
         users.put(username, newUser);
         return newUser;
     }
