@@ -10,8 +10,12 @@ import java.util.ArrayList;
  */
 public class Hatchi {
     private int stage;
-    private int streak;
-    private String status;
+    private String mood;
+
+    public Hatchi() {
+        this.stage = 0;
+        this.mood = "happy";
+    }
 }
 
 

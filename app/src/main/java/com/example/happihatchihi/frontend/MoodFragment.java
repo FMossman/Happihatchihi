@@ -61,6 +61,6 @@ public class MoodFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mood, container, false);
+        return inflater.inflate(R.layout.mood_pop_up, container, false);
     }
 }
