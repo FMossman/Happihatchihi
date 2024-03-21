@@ -1,9 +1,12 @@
+package com.example.happihatchihi.backend;
+
+import com.example.happihatchihi.backend.User;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * The UserManager class manages a collection of User objects.
+ * The com.example.happihatchihi.backend.UserManager class manages a collection of User objects.
  * It provides methods to add, remove, and retrieve users, as well as check if a user exists and if a password matches a given username.
  */
 public class UserManager {
@@ -11,7 +14,7 @@ public class UserManager {
     private Map<String, User> users;
 
     /**
-     * Constructs a new UserManager object with an empty list of users.
+     * Constructs a new com.example.happihatchihi.backend.UserManager object with an empty list of users.
      */
     public UserManager() {
         users = new HashMap<>();

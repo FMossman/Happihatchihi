@@ -24,6 +24,9 @@ public class User {
         this.lastName = lastName;
     }
 
+    public User(String username, String password) {
+    }
+
     /**
      * Returns the first name of the user.
      *
