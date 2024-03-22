@@ -1,7 +1,9 @@
 package com.example.happihatchihi.frontend;
 
+
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +28,7 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
         public ImageView goalIcon;
         public TextView goalNameTextView;
         public TextView goalProgressTextView;
-        public RadioButton goalSelector;
+        public RadioButton goalButton;
         public Button startBtn;
 
         TrackPopupViewHolder(View item) {
@@ -35,7 +37,7 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
             goalIcon = item.findViewById(R.id.goalIcon);
             goalNameTextView = item.findViewById(R.id.goalNameTxt);
             goalProgressTextView = item.findViewById(R.id.goalProgressTxt);
-            goalSelector = item.findViewById(R.id.goalRadiobtn);
+            goalButton = item.findViewById(R.id.goalRadiobtn);
             startBtn = item.findViewById(R.id.startBtn);
         }
     }
@@ -74,11 +76,16 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
     public void onBindViewHolder(@NonNull TrackPopupViewHolder holder, int position) {
         Goal current = goalList.get(position);
         int icon = getGoalIcon(current);
+        holder.goalButton.setId(View.generateViewId());
         holder.goalIcon.setImageResource(icon);
         holder.goalNameTextView.setText(current.getName());
-        holder.goalProgressTextView.setText(String.valueOf(current.getGoalProgress()));
+
+
+        String progress = current.getGoalProgress() + "/" + current.getGoalQuantity();
+        holder.goalProgressTextView.setText(progress);
         int colorPrimary = ContextCompat.getColor(holder.itemView.getContext(),R.color.colorPrimary);
-        holder.goalSelector.setButtonTintList(ColorStateList.valueOf(colorPrimary));
+        holder.goalButton.setButtonTintList(ColorStateList.valueOf(colorPrimary));
+        Context context = holder.itemView.getContext();
 
         if (current.getType().equals("meditation")) {
             holder.startBtn.setVisibility(View.VISIBLE);
@@ -86,6 +93,25 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
             holder.startBtn.setVisibility(View.GONE);
         }
 
+        holder.startBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, Meditation.class);
+                context.startActivity(i);
+            }
+        });
+
+        holder.goalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Increase progress by one when the radio button is clicked
+                current.addProgress();
+
+                // Update the TextView displaying the progress
+                String updatedProgressText = current.getGoalProgress() + " / " + current.getGoalQuantity();
+                holder.goalProgressTextView.setText(updatedProgressText);
+            }
+        });
     }
 
     public void updateGoals(List<Goal> newGoalList) {
@@ -113,4 +139,6 @@ public class TrackPopupAdapter extends RecyclerView.Adapter<TrackPopupAdapter.Tr
     public int getItemCount() {
         return goalList.size();
     }
+
+
 }

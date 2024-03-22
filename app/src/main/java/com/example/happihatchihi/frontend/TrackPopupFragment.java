@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,21 +54,26 @@ public class TrackPopupFragment extends DialogFragment {
             public void onClick(View v) {
                 MainActivity mainAct = (MainActivity) getActivity();
                 mainAct.resetTrackIcon();
+                dismiss();
             }
         });
 
-        startBtn.setOnClickListener(new View.OnClickListener() {
-            /**
-             * A method to close the track popup if done is clicked
-             *
-             * @param v     The view of the button that has been clicked
-             */
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), Meditation.class);
-                startActivity(i);
-            }
-        });
+        if (startBtn != null) {
+            startBtn.setOnClickListener(new View.OnClickListener() {
+                /**
+                 * A method to close the track popup if done is clicked
+                 *
+                 * @param v     The view of the button that has been clicked
+                 */
+                @Override
+                public void onClick(View v) {
+                    Log.d("TrackPopupFragment", "Start button clicked");
+                    Intent i = new Intent(getActivity(), Meditation.class);
+                    startActivity(i);
+                    dismiss();
+                }
+            });
+        }
 
 
 

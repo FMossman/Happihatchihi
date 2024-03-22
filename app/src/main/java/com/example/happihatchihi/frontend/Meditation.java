@@ -16,10 +16,10 @@ import android.view.View;
 
 import com.example.happihatchihi.R;
 
-/*
-The Meditation class allows the user to play a track for
-a certain period of time selected using radio buttons.
-There is also a message displayed with each track in a text view.
+/**
+* The Meditation class allows the user to play a track for
+* a certain period of time selected using radio buttons.
+* There is also a message displayed with each track in a text view.
  */
 public class Meditation extends AppCompatActivity {
     private MediaPlayer hatchiPlayer;
@@ -28,9 +28,9 @@ public class Meditation extends AppCompatActivity {
     //Default of 2mins
     private int durationOfMeditation = 120000;
 
-    /*
-    Method to set up hatchi player and initialize meditation activity
-    @param inputValues Object containing values to start the activity
+    /**
+    * Method to set up hatchi player and initialize meditation activity
+    * @param inputValues Object containing values to start the activity
      */
     @Override
     public void onCreate(Bundle inputValues){
@@ -148,6 +148,8 @@ public class Meditation extends AppCompatActivity {
         }}
     public void backToHome(View v){
         Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("showNav", true);
+        i.putExtra("showMainFrag", true);
         startActivity(i);
     }
     @Override

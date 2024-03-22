@@ -51,6 +51,19 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
         // Hides the bottom navigation on login screen
         bottomNavigationView.setVisibility(View.GONE);
+
+        // Getting info from other activity
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            boolean showNav = extras.getBoolean("showNav", false);
+            boolean showMainFrag = extras.getBoolean("showMainFrag", false);
+            if(showNav){
+                bottomNavigationView.setVisibility(View.VISIBLE);
+            }
+            if(showMainFrag){
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
+            }
+        }
     }
 
     // Setting up the navigation bar

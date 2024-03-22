@@ -2,89 +2,89 @@
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="300dp"
-android:layout_height="wrap_content"
-android:layout_margin="16dp"
-android:background="@drawable/white_background"
-android:id="@+id/track_row">
-
-<ImageView
-    android:id="@+id/goalIcon"
-    android:layout_width="40dp"
-    android:layout_height="40dp"
-    android:layout_margin="8dp"
-    android:src="@drawable/water"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent" />
-
-<LinearLayout
-    android:id="@+id/outerLinearLayout"
-    android:layout_width="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
-    android:background="@android:color/white"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toEndOf="@+id/goalIcon"
-    app:layout_constraintEnd_toStartOf="@+id/goalRadiobtn">
+    android:layout_margin="4dp"
+    android:background="@drawable/white_background"
+    android:id="@+id/track_row"
+    android:layout_gravity="center_horizontal"
+    >
+
+    <ImageView
+        android:id="@+id/goalIcon"
+        android:layout_width="37dp"
+        android:layout_height="45dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/water"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/innerLinearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="58dp"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_toStartOf="@+id/startBtn"
-        android:layout_toEndOf="@+id/goalIcon"
+        android:id="@+id/outerLinearLayout"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@android:color/white"
         android:gravity="center_vertical"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        >
+        app:layout_constraintEnd_toStartOf="@+id/goalRadiobtn"
+        app:layout_constraintStart_toEndOf="@+id/goalIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="0dp">
 
-        <TextView
-            android:id="@+id/goalNameTxt"
-            style="@style/BoldTextViewStyleOnWhite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Water"
-            android:paddingRight="10dp"/>
+        <LinearLayout
+            android:id="@+id/innerLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_toStartOf="@+id/startBtn"
+            android:layout_toEndOf="@+id/goalIcon"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ObsoleteLayoutParam"
+            >
 
-        <TextView
-            android:id="@+id/goalProgressTxt"
-            style="@style/SmallerTextViewStyleOnWhite"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/goalNameTxt"
+                style="@style/BoldTextViewStyleOnWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:text="@string/Water" />
+
+            <TextView
+                android:id="@+id/goalProgressTxt"
+                style="@style/SmallerTextViewStyleOnWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0/5" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0/5" />
+            android:text="Start"
+            android:visibility="gone" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/startBtn"
+    <RadioButton
+        android:id="@+id/goalRadiobtn"
+        style="@style/GoalRadioButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="launchMeditate"
-        android:text="Start"
-        android:visibility="gone" />
-</LinearLayout>
-
-<RadioButton
-    android:id="@+id/goalRadiobtn"
-    style="@style/GoalRadioButtonStyle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentEnd="true"
-    android:layout_marginEnd="0dp"
-    android:gravity="center_vertical"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
