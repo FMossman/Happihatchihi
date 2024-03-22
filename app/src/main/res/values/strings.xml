@@ -14,8 +14,27 @@
     <string name="previous_track" />
     <string name="play" />
     <string name="next_track" />
-    <string name="select_the_goals_you_would_like_to_track">Select the goals you would like to track</string>
+    <string name="select_the_goals_you_would_like_to_track">Select the goal you would like to track</string>
     <string name="fruit_amp_veg"><![CDATA[Fruit & Veg]]></string>
     <string name="meditation">Meditation</string>
     <string name="waterinit">Water</string>
-</resources>
+        <string-array name="day_array">
+            <item>Select one</item>
+            <item>Daily</item>
+            <item>Weekly</item>
+        </string-array>
+    <string name="recurrenceinit">Water</string>
+    <string-array name="recurrence_array">
+        <item>Select one</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="notification_array">
+        <item>Select one</item>
+        <item>On</item>
+        <item>Off</item>
+    </string-array>
+    </resources>
