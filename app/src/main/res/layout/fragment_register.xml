@@ -52,7 +52,8 @@
                     android:layout_height="48dp"
                     android:hint="First Name"
                     android:paddingTop="12dp"
-                    android:paddingBottom="12dp" />
+                    android:paddingBottom="12dp"
+                    android:inputType="textPersonName"/>
 
                 <Space
                     android:layout_width="match_parent"
@@ -64,7 +65,8 @@
                     android:layout_height="48dp"
                     android:hint="Surname"
                     android:paddingTop="12dp"
-                    android:paddingBottom="12dp" />
+                    android:paddingBottom="12dp"
+                    android:inputType="textPersonName"/>
 
                 <Space
                     android:layout_width="match_parent"
@@ -75,6 +77,7 @@
                     android:layout_width="300dp"
                     android:layout_height="48dp"
                     android:hint="Email"
+                    android:inputType="textEmailAddress"
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp" />
 

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.HappiHatchiHi.FullscreenContainer"
+    tools:context=".frontend.LoginFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"/>
+            <TextView
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal"
+                android:text="@string/select_the_goals_you_would_like_to_track"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/healtherEatingRadioButtonInitialGoals"
+                    style="@style/GoalRadioButtonStyle"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:background="@drawable/rounded_corners"
+                    android:drawableLeft="@drawable/apple_wrapper"
+                    android:layoutDirection="rtl"
+                    android:text="Fruits and Vegetables"
+                    android:textAlignment="textStart" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp" />
+
+                <RadioButton
+                    android:id="@+id/waterRadioButtonInitialGoals"
+                    style="@style/GoalRadioButtonStyle"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:background="@drawable/rounded_corners"
+                    android:drawableLeft="@drawable/water_wrapper"
+                    android:layoutDirection="rtl"
+                    android:text="Water"
+                    android:textAlignment="textStart" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp" />
+
+                <RadioButton
+                    android:id="@+id/meditationRadioButtonInitialGoals"
+                    style="@style/GoalRadioButtonStyle"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:background="@drawable/rounded_corners"
+                    android:drawableLeft="@drawable/meditation_wrapper"
+                    android:layoutDirection="rtl"
+                    android:text="Meditation"
+                    android:textAlignment="textStart" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp" />
+
+                <RadioButton
+                    android:id="@+id/customGoalRadioButtonInitialGoals"
+                    style="@style/GoalRadioButtonStyle"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:background="@drawable/rounded_corners"
+                    android:drawableLeft="@drawable/track_wrapper"
+                    android:layoutDirection="rtl"
+                    android:text="Create your own goal"
+                    android:textAlignment="textStart" />
+
+            </RadioGroup>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="100dp" />
+
+            <Button
+                android:id="@+id/initialGoalsNextButton"
+                android:layout_width="122.4dp"
+                android:layout_height="62.4dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Next" />
+        </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

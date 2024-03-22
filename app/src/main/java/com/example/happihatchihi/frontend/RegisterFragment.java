@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.util.Patterns;
 
 import com.example.happihatchihi.R;
 import android.widget.Button;
@@ -74,19 +75,28 @@ public class RegisterFragment extends Fragment {
         EditText editTextPassword = view.findViewById(R.id.editTextPassword);
         EditText editTextConfirmPassword = view.findViewById(R.id.editTextConfirmPassword);
         Button registerButton = view.findViewById(R.id.registerButton);
-
+        EditText emailEditText = view.findViewById(R.id.emailEdtTxt);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String password = editTextPassword.getText().toString();
                 String confirmPassword = editTextConfirmPassword.getText().toString();
+                String email = emailEditText.getText().toString().trim();
 
                 if (!password.equals(confirmPassword)) {
                     Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    Toast.makeText(getActivity(), "The email address is not valid", Toast.LENGTH_SHORT).show();
+                } else if (password.isEmpty()) {
+                    Toast.makeText(getActivity(), "Please enter your password", Toast.LENGTH_SHORT).show();
+                } else if (confirmPassword.isEmpty()) {
+                    Toast.makeText(getActivity(), "Please confirm your password", Toast.LENGTH_SHORT).show();
+                } else if (email.isEmpty()) {
+                    Toast.makeText(getActivity(), "Please enter your email address", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Passwords match, perform further actions
+                    // Passwords match and email is valid, perform further actions
                     Toast.makeText(getActivity(), "Account created", Toast.LENGTH_SHORT).show();
-                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
+                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetInitialGoalsFragment()).commit();
                 }
             }
         });
