@@ -106,9 +106,11 @@ public class Meditation extends AppCompatActivity {
         //Set the mood text window
         TextView moodView = findViewById(R.id.moodView);
         if (trackPlaying == 0) {
-            moodView.setText("Rainforest");
+            moodView.setText("You are a HappiHatchi. Listen to the tranquil sound of the piano." +
+                    "Relax, all your Hatchi problems will vanish away.");
         } else if (trackPlaying == 1) {
-            moodView.setText("Ocean");
+            moodView.setText("Breath in and out with the soothing sound of the ocean." +
+                    "Let the waves wash all your Hatchi worries away.");
         }
         //Starts the track playing with the duration provided
         hatchiPlayer.start();
