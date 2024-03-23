@@ -102,4 +102,60 @@
     </FrameLayout>
 
 
+    <Button
+        android:id="@+id/editProfileBtn"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:onClick="goToEditProfile"
+        android:text="Edit Profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/editGoalsBtn"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:onClick="goToEditGoals"
+        android:text="Edit Goals"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/pauseHatchiBtn"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:onClick="pauseHatchi"
+        android:text="Pause Hatchi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/resetHatchiBtn"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        android:onClick="resetHatchi"
+        android:text="Reset Hatchi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/editNotifications"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:onClick="editNotifications"
+        android:text="Edit Notifications"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
