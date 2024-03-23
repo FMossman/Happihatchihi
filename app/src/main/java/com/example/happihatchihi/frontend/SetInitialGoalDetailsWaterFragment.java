@@ -3,17 +3,15 @@ package com.example.happihatchihi.frontend;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 import com.example.happihatchihi.R;
 
@@ -23,13 +21,13 @@ import com.example.happihatchihi.R;
  * Use the {@link SetInitialGoalsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SetInitialGoalDetailsFragment extends Fragment {
+public class SetInitialGoalDetailsWaterFragment extends Fragment {
 
     /**
      * Default constructor for SetInitialGoalsFragment.
      * Required empty public constructor.
      */
-    public SetInitialGoalDetailsFragment() {
+    public SetInitialGoalDetailsWaterFragment() {
         // Required empty public constructor
     }
 
@@ -51,7 +49,7 @@ public class SetInitialGoalDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_setgoaldetails, container, false);
+        View view = inflater.inflate(R.layout.fragment_setgoaldetailswater, container, false);
 
         Spinner spinner = (Spinner) view.findViewById(R.id.frequencySpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout.
@@ -88,6 +86,48 @@ public class SetInitialGoalDetailsFragment extends Fragment {
         notificationadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner.
         notificationspinner.setAdapter(notificationadapter);
+
+        // Add onClick listener for backButton ImageView
+        ImageView backButton = view.findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to SetInitialGoalsFragment
+                Fragment setInitialGoalsFragment = new SetInitialGoalsFragment();
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, setInitialGoalsFragment)
+                        .commit();
+            }
+        });
+
+        // Add onClick listener for addAnotherGoalButton
+        Button addAnotherGoalButton = view.findViewById(R.id.anotherGoalButton);
+        addAnotherGoalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to SetInitialGoalsFragment
+                Fragment setInitialGoalsFragment = new SetInitialGoalsFragment();
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, setInitialGoalsFragment)
+                        .commit();
+            }
+        });
+
+        // Add onClick listener for nextButton
+        Button nextButton = view.findViewById(R.id.nextButton);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to GoalsSummaryFragment
+                Fragment goalsSummaryFragment = new GoalSummaryFragment();
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, goalsSummaryFragment)
+                        .commit();
+            }
+        });
 
         return view;
     }
