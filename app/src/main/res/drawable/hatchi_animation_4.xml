@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <animation-list android:id="@+id/hatchiAnimation" android:oneshot="false">
+        <item android:drawable="@drawable/hatchi_stage_4a" android:duration="50" />
+        <item android:drawable="@drawable/hatchi_stage_4b" android:duration="50" />
+        <item android:drawable="@drawable/hatchi_stage_4c" android:duration="50" />
+        <item android:drawable="@drawable/hatchi_stage_4d" android:duration="50" />
+        <item android:drawable="@drawable/hatchi_stage_4a" android:duration="50" />
+    </animation-list>
+</selector>

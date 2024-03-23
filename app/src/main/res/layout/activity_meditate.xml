@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".frontend.Meditation">
+
+  <ImageView
+      android:id="@+id/meditateImageView"
+      android:layout_width="268dp"
+      android:layout_height="263dp"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:layout_marginTop="104dp"
+      android:src="@drawable/meditation"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.496"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+      android:id="@+id/previousButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/meditateImageView"
+      android:layout_alignParentStart="true"
+      android:layout_marginStart="4dp"
+      android:layout_marginBottom="96dp"
+      android:onClick="onPreviousClicked"
+      android:text="Previous"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <Button
+      android:id="@+id/playButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/meditateImageView"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="96dp"
+      android:onClick="playAudio"
+      android:text="Play"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <Button
+      android:id="@+id/nextButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/meditateImageView"
+      android:layout_alignParentEnd="true"
+      android:layout_marginEnd="4dp"
+      android:layout_marginBottom="96dp"
+      android:onClick="onNextClicked"
+      android:text="Next"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+  <RadioGroup
+      android:id="@+id/durationRadioGroup"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:orientation="horizontal"
+      app:layout_constraintTop_toBottomOf="@id/meditateImageView"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent">
+
+    <RadioButton
+        android:id="@+id/radio2mins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="2 Minutes" />
+
+    <RadioButton
+        android:id="@+id/radio4mins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4 Minutes" />
+
+    <RadioButton
+        android:id="@+id/radio8mins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8 Minutes" />
+  </RadioGroup>
+
+  <TextView
+      android:id="@+id/moodView"
+      android:layout_width="290dp"
+      android:layout_height="95dp"
+      android:layout_marginBottom="20dp"
+      android:text="You are a HappiHatchi. Listen to the tranquil sound of the piano.
+      Relax, all your Hatchi problems will vanish away."
+      android:textAppearance="?android:textAppearanceMedium"
+      app:layout_constraintBottom_toTopOf="@+id/playButton"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.512"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <Button
+      android:id="@+id/backButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:onClick="backToHome"
+      android:text="Back"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

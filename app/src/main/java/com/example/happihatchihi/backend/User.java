@@ -1,10 +1,13 @@
-
 package com.example.happihatchihi.backend;
+
+
 import java.util.ArrayList;
 
-package com.example.happihatchihi;
+
+//package com.example.happihatchihi;
 import com.example.happihatchihi.backend.Goal;
 import com.example.happihatchihi.backend.Hatchi;
+
 
 
 /**
@@ -23,22 +26,23 @@ public class User {
     private Boolean hatchiAlive;
     private Boolean hatchiPaused;
     private int streakCount;
-    /** private Hatchi hatchi; */
+    private Hatchi hatchi;
 
-    public User(String username, String password, String email, int age, String gender, String firstName, String lastName) {
+    public User(String username, String password, String email, String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.age = age;
-        this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
         this.goals = new ArrayList<>();
         this.hatchiAlive = true;
         this.hatchiPaused = false;
         this.streakCount = 0;
-        /**this.Hatchi = new Hatchi();*/
+        this.hatchi = new Hatchi();
 
+    }
+
+    public User(String username, String password) {
     }
 
     /**
