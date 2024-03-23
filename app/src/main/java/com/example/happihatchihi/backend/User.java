@@ -161,7 +161,23 @@ public class User {
      * @param goals the new goals of the user.
      */
     public void setGoals(ArrayList<Goal> goals) {
+        if (this.goals.contains(goals)) {
+             return "This goal is already in your goals list!";
+        }
+        else {
         this.goals = goals;
+        return "Goals updated successfully!"
+        }
+    }
+
+    public  void resetGoals() {
+        if (this.goals.isEmpty()) {
+            return "The goals list is Empty!";
+        }
+        else {
+            this.goals.clear();
+            return "Goals reset successfully!"
+        }
     }
 
     /**
@@ -226,5 +242,14 @@ public class User {
     public void setHatchi(Hatchi hatchi) {
         this.hatchi = hatchi;
     } */
+
+    /**
+     * This method lets the user add goals into their goals list.
+     * @param.
+     */
+    public int addGoal() {
+        return streakCount;
+    }
+
 }
 
