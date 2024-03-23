@@ -1,16 +1,16 @@
 package com.example.happihatchihi.frontend;
 
 import android.os.Bundle;
+import android.widget.Button;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.activity.OnBackPressedCallback;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.happihatchihi.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,21 +63,50 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        final Button settingsBtn = view.findViewById(R.id.settingsBtn);
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
 
-        // This is an example of handling back button press event
-        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) {
-            @Override
-            public void handleOnBackPressed() {
-                // Your code here
-                // For example:
-                // Perform some action or navigate back to the previous fragment/activity
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.VISIBLE);
             }
+
         });
+        final Button pauseHatchiBtn = view.findViewById(R.id.pauseHatchiBtn);
+        pauseHatchiBtn.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new PauseHatchiFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.VISIBLE);
+            }
+
+        });
+        final Button resetHatchiBtn = view.findViewById(R.id.resetHatchiBtn);
+        resetHatchiBtn.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new ResetHatchiFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.VISIBLE);
+            }
+
+        });
+        final Button editnotifications = view.findViewById(R.id.editNotificationsBtn);
+        editnotifications.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new EditNotificationsFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.VISIBLE);
+            }
+
+        });
+        return view;
+
     }
 }
+
