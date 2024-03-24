@@ -103,7 +103,6 @@ public class ProfileFragment extends Fragment {
                 BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
                 bottomNavigationView.setVisibility(View.VISIBLE);
             }
-
         });
         return view;
 

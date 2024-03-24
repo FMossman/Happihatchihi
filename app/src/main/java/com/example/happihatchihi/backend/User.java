@@ -1,13 +1,9 @@
+
 package com.example.happihatchihi.backend;
-
-
 import java.util.ArrayList;
 
-
-//package com.example.happihatchihi;
 import com.example.happihatchihi.backend.Goal;
 import com.example.happihatchihi.backend.Hatchi;
-
 
 
 /**
@@ -28,10 +24,12 @@ public class User {
     private int streakCount;
     private Hatchi hatchi;
 
-    public User(String username, String password, String email, String firstName, String lastName) {
+    public User(String username, String password, String email, int age, String gender, String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.age = age;
+        this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
         this.goals = new ArrayList<>();
@@ -40,9 +38,6 @@ public class User {
         this.streakCount = 0;
         this.hatchi = new Hatchi();
 
-    }
-
-    public User(String username, String password) {
     }
 
     /**
@@ -169,10 +164,32 @@ public class User {
     /**
      * Sets the goals of the user.
      * @param goals the new goals of the user.
+     * @return A confirmation message of the action taken.
      */
-    public void setGoals(ArrayList<Goal> goals) {
-        this.goals = goals;
+    public String setGoals(Goal goals) {
+        if (this.goals.contains(goals)) {
+            return "This goal is already in your goals list!";
+        }
+        else {
+            this.goals.add(goals);
+            return "Goals updated successfully!";
+        }
     }
+
+    /**
+     * Resets the user's goals by removing them.
+     * @return A confirmation message of the action taken.
+     */
+    public  String resetGoals() {
+        if (this.goals.isEmpty()) {
+            return "The goals list is Empty!";
+        }
+        else {
+            this.goals.clear();
+            return "Goals reset successfully!";
+        }
+    }
+
 
     /**
      * Returns the alive status of the user's Hatchi.
@@ -218,13 +235,13 @@ public class User {
      * Sets streak count of the user.
      */
     public void setStreakCount() {
-        streakCount = streakCount++;
+                this.streakCount ++;
     }
 
     /**
      * Returns the Hatchi of the user.
      * @return the Hatchi of the user.
-
+     */
     public Hatchi getHatchi() {
         return hatchi;
     }
@@ -232,9 +249,9 @@ public class User {
     /**
      * Sets the Hatchi of the user.
      * @param hatchi the Hatchi of the user.
-
+     */
     public void setHatchi(Hatchi hatchi) {
         this.hatchi = hatchi;
-    } */
+    }
 }
 
