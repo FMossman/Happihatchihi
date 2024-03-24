@@ -4,19 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.happihatchihi.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,11 +48,23 @@ public class SetInitialGoalsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_setinitialgoals, container, false);
 
+        RadioGroup radioGroup = view.findViewById(R.id.initialGoalsRadioGroup);
         Button nextButton = view.findViewById(R.id.initialGoalsNextButton);
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetInitialGoalDetailsFragment()).commit();
+                int selectedRadioButtonId = radioGroup.getCheckedRadioButtonId();
+                if (selectedRadioButtonId == R.id.waterRadioButtonInitialGoals) {
+                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetInitialGoalDetailsWaterFragment()).commit();
+                } else if (selectedRadioButtonId == R.id.fruitAndVegRadioButtonInitialGoals) {
+                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetInitialGoalDetailsFruitAndVegFragment()).commit();
+                } else if (selectedRadioButtonId == R.id.meditationRadioButtonInitialGoals) {
+                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetInitialGoalDetailsMeditationFragment()).commit();
+                } else if (selectedRadioButtonId == R.id.customGoalRadioButtonInitialGoals) {
+                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetInitialGoalDetailsCustomGoalFragment()).commit();
+                } else {
+                    // No radio button selected
+                }
             }
         });
         return view;

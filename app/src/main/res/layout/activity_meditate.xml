@@ -28,7 +28,7 @@
       android:layout_marginStart="4dp"
       android:layout_marginBottom="96dp"
       android:onClick="onPreviousClicked"
-      android:text="@string/previous_track"
+      android:text="Previous"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent" />
 
@@ -40,10 +40,10 @@
       android:layout_centerHorizontal="true"
       android:layout_marginBottom="96dp"
       android:onClick="playAudio"
-      android:text="@string/play"
+      android:text="Play"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.538"
+      app:layout_constraintHorizontal_bias="0.498"
       app:layout_constraintStart_toStartOf="parent" />
 
   <Button
@@ -55,7 +55,7 @@
       android:layout_marginEnd="4dp"
       android:layout_marginBottom="96dp"
       android:onClick="onNextClicked"
-      android:text="@string/next_track"
+      android:text="Next"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent" />
 
@@ -94,7 +94,8 @@
       android:layout_width="290dp"
       android:layout_height="95dp"
       android:layout_marginBottom="20dp"
-      android:text="Environment: "
+      android:text="You are a HappiHatchi. Listen to the tranquil sound of the piano.
+      Relax, all your Hatchi problems will vanish away."
       android:textAppearance="?android:textAppearanceMedium"
       app:layout_constraintBottom_toTopOf="@+id/playButton"
       app:layout_constraintEnd_toEndOf="parent"
