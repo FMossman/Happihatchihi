@@ -8,7 +8,7 @@
     tools:context=".frontend.ProfileFragment">
 
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/backBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -73,24 +73,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-        android:id="@+id/settings"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="380dp"
-        android:text="Settings"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/logout"
+        android:id="@+id/logOutButton"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="380dp"
         android:text="Log Out"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNotifications" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

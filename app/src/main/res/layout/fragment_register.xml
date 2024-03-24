@@ -30,47 +30,54 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/smallHatchiLogo"
                     android:layout_width="wrap_content"
                     android:layout_height="189dp"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/hathchi_logo" />
 
                 <TextView
+                    android:id="@+id/detailsInstructions"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="Please enter your personal information to get started"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
                     android:paddingTop="16dp"
-                    android:paddingBottom="16dp" />
+                    android:paddingBottom="16dp"
+                    android:text="Please enter your personal information to get started" />
 
                 <EditText
+                    android:id="@+id/firstNameEdtTxt"
                     android:layout_width="300dp"
                     android:layout_height="48dp"
                     android:hint="First Name"
                     android:paddingTop="12dp"
-                    android:paddingBottom="12dp" />
+                    android:paddingBottom="12dp"
+                    android:inputType="textPersonName"/>
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="16dp" />
 
                 <EditText
+                    android:id="@+id/lastNameEdtTxt"
                     android:layout_width="300dp"
                     android:layout_height="48dp"
                     android:hint="Surname"
                     android:paddingTop="12dp"
-                    android:paddingBottom="12dp" />
+                    android:paddingBottom="12dp"
+                    android:inputType="textPersonName"/>
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="16dp" />
 
                 <EditText
-                    android:id="@+id/editTextEmailAddress"
+                    android:id="@+id/emailEdtTxt"
                     android:layout_width="300dp"
                     android:layout_height="48dp"
                     android:hint="Email"
+                    android:inputType="textEmailAddress"
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp" />
 

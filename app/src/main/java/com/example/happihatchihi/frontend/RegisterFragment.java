@@ -1,5 +1,7 @@
 package com.example.happihatchihi.frontend;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +14,10 @@ import com.example.happihatchihi.R;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.TextView;
+import android.content.SharedPreferences;
+import android.content.Context;
+
 
 
 /**
@@ -26,7 +32,10 @@ public class RegisterFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
     private String mParam1;
+    EditText name;
     private String mParam2;
+    String nameString;
+    SharedPreferences sharedPreferences;
 
     public RegisterFragment() {
         // Required empty public constructor
@@ -53,11 +62,14 @@ public class RegisterFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,33 +79,55 @@ public class RegisterFragment extends Fragment {
     }
 
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
 
-        EditText editTextPassword = view.findViewById(R.id.editTextPassword);
-        EditText editTextConfirmPassword = view.findViewById(R.id.editTextConfirmPassword);
-        Button registerButton = view.findViewById(R.id.registerButton);
-        EditText editTextEmailAddress = view.findViewById(R.id.editTextEmailAddress);
-
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
+            name = view.findViewById(R.id.firstNameEdtTxt);
+            sharedPreferences = requireContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE); // Initialize sharedPreferences using getContext() method
+            EditText editTextPassword = view.findViewById(R.id.editTextPassword);
+            EditText editTextConfirmPassword = view.findViewById(R.id.editTextConfirmPassword);
+            Button registerButton = view.findViewById(R.id.registerButton);
+            EditText emailEditText = view.findViewById(R.id.emailEdtTxt);
+        
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String password = editTextPassword.getText().toString();
                 String confirmPassword = editTextConfirmPassword.getText().toString();
-                String email = editTextEmailAddress.getText().toString();
-
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    Toast.makeText(getActivity(), "Please enter a valid email address", Toast.LENGTH_SHORT).show();
-                } else if (!password.equals(confirmPassword)) {
-                    Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Passwords match, perform further actions
-                    Toast.makeText(getActivity(), "Account created", Toast.LENGTH_SHORT).show();
-                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
-                }
-
-            }
+                String email = emailEditText.getText().toString().trim();
+                nameString = name.getText().toString();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("name", nameString);
+                editor.apply();
+                EditText firstNameEditText = view.findViewById(R.id.firstNameEdtTxt);
+                EditText lastNameEditText = view.findViewById(R.id.lastNameEdtTxt);
+                EditText emailEditText = view.findViewById(R.id.emailEdtTxt);
+                EditText passwordEditText = view.findViewById(R.id.editTextPassword);
+                EditText confirmPasswordEditText = view.findViewById(R.id.editTextConfirmPassword);
+                Button registerButton = view.findViewById(R.id.registerButton);
+                String firstName = firstNameEditText.getText().toString();
+                String lastName = lastNameEditText.getText().toString();
+                        if (firstName.isEmpty()) {
+                            Toast.makeText(getActivity(), "Please enter your first name", Toast.LENGTH_SHORT).show();
+                        } else if (lastName.isEmpty()) {
+                            Toast.makeText(getActivity(), "Please enter your last name", Toast.LENGTH_SHORT).show();
+                        } else if (email.isEmpty()) {
+                            Toast.makeText(getActivity(), "Please enter your email address", Toast.LENGTH_SHORT).show();
+                        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                            Toast.makeText(getActivity(), "The email address is not valid", Toast.LENGTH_SHORT).show();
+                        } else if (password.isEmpty()) {
+                            Toast.makeText(getActivity(), "Please enter your password", Toast.LENGTH_SHORT).show();
+                        } else if (confirmPassword.isEmpty()) {
+                            Toast.makeText(getActivity(), "Please re-enter your password", Toast.LENGTH_SHORT).show();
+                        } else if (!password.equals(confirmPassword)) {
+                            Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // Passwords match and email is valid, take user to registration landing screen
+                            Toast.makeText(getActivity(), "Account created", Toast.LENGTH_SHORT).show();
+                            getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new RegistrationLandingFragment()).commit();
+                        }
+                    }
         });
     }
 }
