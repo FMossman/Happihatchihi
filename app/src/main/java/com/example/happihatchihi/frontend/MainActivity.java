@@ -2,26 +2,15 @@ package com.example.happihatchihi.frontend;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.PopupWindow;
-
 import androidx.fragment.app.Fragment;
 import com.example.happihatchihi.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import java.util.ArrayList;
-import java.util.List;
 
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainFragment.WaterWarningClickListener {
 
     // Field for holding the bottom navigation
     private BottomNavigationView bottomNavigationView;
@@ -39,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         // Connecting to the bottom navigation xml
         bottomNavigationView = findViewById(R.id.bottomNavView);
         // Getting rid of tint on navigation buttons
@@ -61,7 +49,15 @@ public class MainActivity extends AppCompatActivity {
                 bottomNavigationView.setVisibility(View.VISIBLE);
             }
             if(showMainFrag){
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
+                MainFragment mainFrag = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+                if (mainFrag == null) {
+                    mainFrag = new MainFragment();
+                    mainFrag.setWaterWarningClickListener(this);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mainFrag).commit();
+                }
+                else {
+                    mainFrag.setWaterWarningClickListener(this);
+                }
             }
         }
     }
@@ -103,7 +99,13 @@ public class MainActivity extends AppCompatActivity {
                         showMoodPopup();
 
                     } else if (menuItem.getItemId() == R.id.track) {
-                        selectedFragment = new MainFragment();
+                        Fragment existingMain = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+                        if (existingMain instanceof MainFragment) {
+                            selectedFragment = existingMain;
+                        }
+                        else {
+                            selectedFragment = new MainFragment();
+                        }
                         menuItem.setIcon(R.drawable.track_selected);
                         resetMoodIcon();
                         resetStatsIcon();
@@ -122,10 +124,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      *  A method to show the popup for tracking goals
      */
-    private void showTrackPopup() {
-        TrackPopupFragment trackPopupFragment = new TrackPopupFragment();
+    public void showTrackPopup() {
+        MainFragment mainFrag = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        TrackPopupFragment trackPopupFragment = new TrackPopupFragment(mainFrag);
         trackPopupFragment.show(getSupportFragmentManager(), "track_popup_fragment");
-    }
+        }
 
     /**
      * A method to show the popup for registering the user's mood
@@ -162,6 +165,16 @@ public class MainActivity extends AppCompatActivity {
     public void resetTrackIcon() {
         bottomNavigationView.getMenu().findItem(R.id.track).setIcon(R.drawable.track_svg);
     }
+
+    /**
+     * A method for accessing the track popup from the water warning button
+     */
+    @Override
+    public void waterWarningClicked() {
+        showTrackPopup();
+    }
+
+
 }
 
 

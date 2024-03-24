@@ -159,6 +159,12 @@ public class Goal {
         }
     }
 
+    public void removeProgress(){
+        if(this.goalProgress > 0) {
+            this.goalProgress--;
+        }
+    }
+
     //public void checkGoalStatus(){
     //    for ( HatchiWarning warning : warnings) {
 

@@ -47,12 +47,27 @@
         android:id="@+id/hatchiImgBtn"
         android:layout_width="301dp"
         android:layout_height="264dp"
+        android:background="#0000"
         android:scaleType="fitCenter"
         android:src="@drawable/hatchi_stage_4a"
-        android:background="#0000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/waterWarningImgBtn"
+        android:layout_width="173dp"
+        android:layout_height="134dp"
+        android:background="#0000"
+        android:scaleType="fitCenter"
+        android:src="@drawable/water_warning"
+        app:layout_constraintBottom_toTopOf="@+id/hatchiImgBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.768"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
