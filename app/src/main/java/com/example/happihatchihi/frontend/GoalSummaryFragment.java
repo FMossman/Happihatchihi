@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.happihatchihi.R;
@@ -137,6 +138,19 @@ public class GoalSummaryFragment extends Fragment {
                     bottomNavigationView.setVisibility(View.VISIBLE);
                 }
 
+            });
+
+            ImageView backButton = view.findViewById(R.id.backButton);
+            backButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Navigate to SetInitialGoalsFragment
+                    Fragment setInitialGoalsFragment = new SetInitialGoalsFragment();
+                    FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.fragment_container, setInitialGoalsFragment)
+                            .commit();
+                }
             });
 
     }

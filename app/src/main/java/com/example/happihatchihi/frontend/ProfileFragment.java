@@ -1,5 +1,7 @@
 package com.example.happihatchihi.frontend;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,6 +11,7 @@ import androidx.activity.OnBackPressedCallback;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.happihatchihi.R;
 
@@ -77,6 +80,51 @@ public class ProfileFragment extends Fragment {
                 // Your code here
                 // For example:
                 // Perform some action or navigate back to the previous fragment/activity
+            }
+        });
+
+        Button resetHatchiBtn = view.findViewById(R.id.resetHatchiBtn);
+        resetHatchiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setCancelable(true);
+                builder.setTitle("Reset Hatchi?");
+                builder.setMessage("Are you sure you wish to reset your Hatchi? You will lose all progress.");
+                builder.setPositiveButton("Confirm",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Create another dialog here
+                            AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext());
+                            builder2.setCancelable(true);
+                            builder2.setTitle("Are you really sure?");
+                            builder2.setMessage("This action cannot be undone.");
+                            builder2.setPositiveButton("Yes, I'm sure",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetInitialGoalsFragment()).commit();
+                                    }
+                                });
+                            builder2.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            });
+
+                            AlertDialog dialog2 = builder2.create();
+                            dialog2.show();
+                        }
+                    });
+                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
     }
