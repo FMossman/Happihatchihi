@@ -1,13 +1,9 @@
+
 package com.example.happihatchihi.backend;
-
-
 import java.util.ArrayList;
 
-
-//package com.example.happihatchihi;
 import com.example.happihatchihi.backend.Goal;
 import com.example.happihatchihi.backend.Hatchi;
-
 
 
 /**
@@ -18,6 +14,8 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private int age;
+    private String gender;
     private String firstName;
     private String lastName;
     private ArrayList<Goal> goals;
@@ -26,10 +24,12 @@ public class User {
     private int streakCount;
     private Hatchi hatchi;
 
-    public User(String username, String password, String email, String firstName, String lastName) {
+    public User(String username, String password, String email, int age, String gender, String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.age = age;
+        this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
         this.goals = new ArrayList<>();
@@ -39,10 +39,6 @@ public class User {
         this.hatchi = new Hatchi();
 
     }
-
-    public User(String username, String password) {
-    }
-
 
     /**
      * Returns the first name of the user.
@@ -125,6 +121,39 @@ public class User {
     }
 
     /**
+     * Returns the age of the user.
+     * @return the age of the user.
+     */
+    public int getAge() {
+        return age;
+    }
+
+    /**
+     * Sets the age of the user.
+     * @param age the new age of the user.
+     */
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
+    /**
+     * Returns the gender of the user.
+     * @return the gender of the user.
+     */
+    public String getGender() {
+        return gender;
+    }
+
+    /**
+     * Sets the gender of the user.
+     * @param gender the new gender of the user.
+     */
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    /**
      * Returns the goals of the user.
      * @return the goals of the user.
      */
@@ -135,26 +164,32 @@ public class User {
     /**
      * Sets the goals of the user.
      * @param goals the new goals of the user.
+     * @return A confirmation message of the action taken.
      */
-    public void setGoals(ArrayList<Goal> goals) {
+    public String setGoals(Goal goals) {
         if (this.goals.contains(goals)) {
-             return "This goal is already in your goals list!";
+            return "This goal is already in your goals list!";
         }
         else {
-        this.goals = goals;
-        return "Goals updated successfully!"
+            this.goals.add(goals);
+            return "Goals updated successfully!";
         }
     }
 
-    public  void resetGoals() {
+    /**
+     * Resets the user's goals by removing them.
+     * @return A confirmation message of the action taken.
+     */
+    public  String resetGoals() {
         if (this.goals.isEmpty()) {
             return "The goals list is Empty!";
         }
         else {
             this.goals.clear();
-            return "Goals reset successfully!"
+            return "Goals reset successfully!";
         }
     }
+
 
     /**
      * Returns the alive status of the user's Hatchi.
@@ -200,13 +235,13 @@ public class User {
      * Sets streak count of the user.
      */
     public void setStreakCount() {
-        streakCount = streakCount++;
+                this.streakCount ++;
     }
 
     /**
      * Returns the Hatchi of the user.
      * @return the Hatchi of the user.
-
+     */
     public Hatchi getHatchi() {
         return hatchi;
     }
@@ -214,18 +249,9 @@ public class User {
     /**
      * Sets the Hatchi of the user.
      * @param hatchi the Hatchi of the user.
-
+     */
     public void setHatchi(Hatchi hatchi) {
         this.hatchi = hatchi;
-    } */
-
-    /**
-     * This method lets the user add goals into their goals list.
-     * @param.
-     */
-    public int addGoal() {
-        return streakCount;
     }
-
 }
 

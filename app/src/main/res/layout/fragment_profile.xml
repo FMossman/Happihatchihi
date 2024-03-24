@@ -7,71 +7,88 @@
     android:layout_height="match_parent"
     tools:context=".frontend.ProfileFragment">
 
-    <Button
-        android:id="@+id/backBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:onClick="goBack"
-        android:text="Back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="145dp"
+            android:layout_gravity="center_vertical">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="145dp"
+                android:layout_gravity="center_vertical">
 
-    <Button
-        android:id="@+id/editProfileBtn"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:onClick="goToEditProfile"
-        android:text="Edit Profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Username"
+                    android:textColor="@color/colorPrimaryVariant"
+                    android:textSize="28dp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"/>
+                <Button
+                    android:id="@+id/logoutBtn"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/error"
+                    />
 
-    <Button
-        android:id="@+id/editGoalsBtn"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
-        android:onClick="goToEditGoals"
-        android:text="Edit Goals"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/pauseHatchiBtn"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:onClick="pauseHatchi"
-        android:text="Pause Hatchi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="279dp">
 
-    <Button
-        android:id="@+id/resetHatchiBtn"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
-        android:onClick="resetHatchi"
-        android:text="Reset Hatchi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/settingsBtn"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="Settings" />
 
-    <Button
-        android:id="@+id/editNotifications"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="380dp"
-        android:onClick="editNotifications"
-        android:text="Edit Notifications"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/editGoalsBtn"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Goals" />
+
+                <Button
+                    android:id="@+id/pauseHatchiBtn"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pause Hatchi" />
+
+                <Button
+                    android:id="@+id/resetHatchiBtn"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="Reset Hatchi" />
+
+                <Button
+                    android:id="@+id/editNotificationsBtn"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Notifications" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

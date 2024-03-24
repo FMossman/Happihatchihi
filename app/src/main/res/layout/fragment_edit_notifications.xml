@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="?attr/fullscreenBackgroundColor"
     android:theme="@style/ThemeOverlay.HappiHatchiHi.FullscreenContainer"
     tools:context=".frontend.LoginFragment">
@@ -11,6 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,6 +79,7 @@
                         android:layout_gravity="start"
                         android:background="@drawable/rounded_corners"
                         android:layoutDirection="rtl"
+                        android:drawableLeft="@drawable/apple_wrapper"
                         android:text="Fruits and Vegetables"
                         android:textAlignment="textStart" />
 
@@ -83,6 +94,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
                         android:background="@drawable/rounded_corners"
+                        android:drawableLeft="@drawable/water_wrapper"
                         android:layoutDirection="rtl"
                         android:text="Water"
                         android:textAlignment="textStart" />
@@ -100,6 +112,7 @@
                         android:background="@drawable/rounded_corners"
                         android:layoutDirection="rtl"
                         android:text="Meditation"
+                        android:drawableLeft="@drawable/meditation_wrapper"
                         android:textAlignment="textStart" />
 
 

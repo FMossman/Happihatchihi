@@ -69,7 +69,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pause_white_rectangle" />
     <Button
-        android:id="@+id/restartBtn"
+        android:id="@+id/backBtn"
         android:layout_width="276dp"
         android:layout_height="72dp"
         android:layout_gravity="center_horizontal"
@@ -82,7 +82,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-            android:id="@+id/backBtn"
+            android:id="@+id/resetBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
