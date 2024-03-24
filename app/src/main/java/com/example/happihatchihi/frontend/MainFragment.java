@@ -2,70 +2,86 @@ package com.example.happihatchihi.frontend;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-
 import com.example.happihatchihi.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MainFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class MainFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public MainFragment() {
-        // Required empty public constructor
+    // Interface so MainFragment can access method in MainActivity
+    public interface WaterWarningClickListener {
+        void waterWarningClicked();
     }
+    private WaterWarningClickListener listener;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MainFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MainFragment newInstance(String param1, String param2) {
-        MainFragment fragment = new MainFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    // Empty constructor was required
+    public MainFragment() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // TODO: Add animation when Hatchi is clicked
        // startAnimateHatchi();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        return view;
+    }
 
+
+
+    @Override
+    public void onViewCreated(@Nullable View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if (view != null) {
+
+            // Find the water warning image button
+            ImageButton waterWarningBtn = view.findViewById(R.id.waterWarningImgBtn);
+            if (waterWarningBtn != null) {
+                waterWarningBtn.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        if (listener != null) {
+                            listener.waterWarningClicked();
+                        }
+                    }
+                });
+            }
+        }
+        if(getActivity() instanceof WaterWarningClickListener) {
+            setWaterWarningClickListener((WaterWarningClickListener) getActivity());
+        }
+    }
+
+    public void setWaterWarningClickListener(WaterWarningClickListener listener) {
+        this.listener = listener;
+    }
+
+    public void hideWaterWarning() {
+        // Hides water warning if not already hidden
+        View view = getView();
+        if (view != null) {
+            Log.e("hide", "view is not null");
+            ImageButton waterWarning = view.findViewById(R.id.waterWarningImgBtn);
+            if (waterWarning != null) {
+                Log.e("hide", "waterwarning is not null");
+                waterWarning.setVisibility(View.GONE);
+            }
+        }
 
     }
+
 /**
  * Not working yet
     public void startAnimateHatchi(){

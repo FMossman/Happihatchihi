@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +27,11 @@ public class TrackPopupFragment extends DialogFragment {
 
 
     private TrackPopupAdapter adapter;
+    private MainFragment mainFrag;
+
+    public TrackPopupFragment(MainFragment mainFrag) {
+        this.mainFrag = mainFrag;
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -54,6 +60,12 @@ public class TrackPopupFragment extends DialogFragment {
             public void onClick(View v) {
                 MainActivity mainAct = (MainActivity) getActivity();
                 mainAct.resetTrackIcon();
+                if (mainFrag != null) {
+                    mainFrag.hideWaterWarning();
+                }
+                else {
+                    Log.e("TrackPopupFragment", "MainFragment is null");
+                }
                 dismiss();
             }
         });
@@ -88,10 +100,5 @@ public class TrackPopupFragment extends DialogFragment {
         });
         return mainView;
     }
-
-
-
-
-
 
 }
