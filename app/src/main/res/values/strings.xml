@@ -24,6 +24,7 @@
             <item>Weekly</item>
         </string-array>
     <string name="recurrenceinit">Water</string>
+    <string name="welcome_message"><![CDATA[Welcome %1$s! In order to get started, you now need to decide on your wellbeing goals!]]></string>
     <string-array name="recurrence_array">
         <item>Select one</item>
         <item>1</item>

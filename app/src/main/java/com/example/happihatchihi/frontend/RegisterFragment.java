@@ -1,5 +1,7 @@
 package com.example.happihatchihi.frontend;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,11 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.util.Patterns;
-
 import com.example.happihatchihi.R;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.TextView;
+import android.content.SharedPreferences;
+import android.content.Context;
+
 
 
 /**
@@ -27,7 +32,10 @@ public class RegisterFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
     private String mParam1;
+    EditText name;
     private String mParam2;
+    String nameString;
+    SharedPreferences sharedPreferences;
 
     public RegisterFragment() {
         // Required empty public constructor
@@ -54,11 +62,14 @@ public class RegisterFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,20 +79,27 @@ public class RegisterFragment extends Fragment {
     }
 
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
 
-        EditText editTextPassword = view.findViewById(R.id.editTextPassword);
-        EditText editTextConfirmPassword = view.findViewById(R.id.editTextConfirmPassword);
-        Button registerButton = view.findViewById(R.id.registerButton);
-        EditText emailEditText = view.findViewById(R.id.emailEdtTxt);
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
+            name = view.findViewById(R.id.firstNameEdtTxt);
+            sharedPreferences = requireContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE); // Initialize sharedPreferences using getContext() method
+            EditText editTextPassword = view.findViewById(R.id.editTextPassword);
+            EditText editTextConfirmPassword = view.findViewById(R.id.editTextConfirmPassword);
+            Button registerButton = view.findViewById(R.id.registerButton);
+            EditText emailEditText = view.findViewById(R.id.emailEdtTxt);
+        
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String password = editTextPassword.getText().toString();
                 String confirmPassword = editTextConfirmPassword.getText().toString();
                 String email = emailEditText.getText().toString().trim();
+                nameString = name.getText().toString();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("name", nameString);
+                editor.apply();
 
                 if (!password.equals(confirmPassword)) {
                     Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
@@ -96,8 +114,10 @@ public class RegisterFragment extends Fragment {
                 } else {
                     // Passwords match and email is valid, perform further actions
                     Toast.makeText(getActivity(), "Account created", Toast.LENGTH_SHORT).show();
-                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetInitialGoalsFragment()).commit();
+                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new RegistrationLandingFragment()).commit();
                 }
+
+                
             }
         });
     }
