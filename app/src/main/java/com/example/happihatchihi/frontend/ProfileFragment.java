@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.happihatchihi.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -127,5 +128,17 @@ public class ProfileFragment extends Fragment {
                 dialog.show();
             }
         });
+
+        Button logoutBtn = view.findViewById(R.id.logOutButton);
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.GONE);
+            }
+        });
+
+        
     }
 }
