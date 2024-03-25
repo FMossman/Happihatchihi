@@ -38,6 +38,24 @@
         android:layout_height="650dp"
         android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/historyBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="389dp"
+        android:layout_height="519dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/histoyTextView">
@@ -47,20 +65,29 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="8dp">
+            android:orientation="vertical">
 
-            <!-- water -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/waterClosedConstraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/goal_stat_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+          
+          <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/waterClosedConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/goal_stat_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_marginBottom="8dp"
+            tools:layout_marginEnd="8dp"
+            tools:layout_marginStart="8dp"
+            android:paddingTop="4dp">
+
+                tools:layout_marginStart="8dp"
                 tools:layout_marginBottom="8dp"
                 tools:layout_marginEnd="8dp"
-                tools:layout_marginStart="8dp"
-                android:paddingTop="4dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
 
                 <ImageView
                     android:id="@+id/waterIconImageView"
@@ -99,6 +126,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
             <!-- water expanded -->
             <LinearLayout
                 android:id="@+id/waterExpandedLayout"
@@ -127,11 +155,13 @@
             </LinearLayout>
 
             <!-- fruit and veg -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/fruitClosedConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/goal_stat_background"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/waterClosedConstraintLayout"
@@ -139,6 +169,14 @@
                 tools:layout_marginEnd="8dp"
                 tools:layout_marginStart="8dp"
                 android:paddingTop="4dp">
+
+                tools:layout_marginStart="8dp"
+                tools:layout_marginBottom="8dp"
+                tools:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/waterClosedConstraintLayout">
+
 
                 <ImageView
                     android:id="@+id/fruitIconImageView"
@@ -177,6 +215,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
             <!-- fruit and veg expanded -->
             <LinearLayout
                 android:id="@+id/fruitExpandedLayout"
@@ -205,11 +244,13 @@
             </LinearLayout>
 
             <!-- meditation -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/meditationClosedConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/goal_stat_background"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fruitClosedConstraintLayout"
@@ -217,6 +258,14 @@
                 tools:layout_marginEnd="8dp"
                 tools:layout_marginStart="8dp"
                 android:paddingTop="4dp">
+
+                tools:layout_marginStart="8dp"
+                tools:layout_marginBottom="8dp"
+                tools:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fruitClosedConstraintLayout">
+
 
                 <ImageView
                     android:id="@+id/meditationIconImageView"
@@ -255,6 +304,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
             <!-- meditation expanded -->
             <LinearLayout
                 android:id="@+id/medExpandedLayout"
@@ -283,11 +333,13 @@
             </LinearLayout>
 
             <!-- Streaks -->
+
             <TextView
                 android:id="@+id/streaksTextView"
                 style="@style/BoldTextViewStyleOnWhite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
@@ -297,17 +349,35 @@
                 android:textStyle="bold" />
 
             <!-- streak update -->
+                android:layout_marginTop="16dp"
+                android:text="Streaks"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/meditationClosedConstraintLayout" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/CurrentStreakConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/goal_stat_background"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/streaksTextView"
                 tools:layout_marginBottom="8dp"
                 tools:layout_marginEnd="8dp"
                 tools:layout_marginStart="8dp">
+
+                tools:layout_marginStart="8dp"
+                tools:layout_marginBottom="8dp"
+                tools:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/streaksTextView">
+
 
                 <ImageView
                     android:id="@+id/streakIconImageView"
@@ -339,6 +409,7 @@
                 style="@style/BoldTextViewStyleOnWhite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
@@ -346,13 +417,27 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="16dp" />
 
+                android:layout_marginTop="16dp"
+                android:text="Your MAX streaks each month!"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/CurrentStreakConstraintLayout" />
+
+
 
             <ImageView
                 android:id="@+id/streakGraphImgView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:src="@drawable/streak_graph_months"
                 app:layout_constraintTop_toTopOf="@id/streaksGraphTextView" />
+
+                android:src="@drawable/streak_graph"
+                app:layout_constraintTop_toTopOf="@id/streaksGraphTextView"
+                />
 
         </LinearLayout>
     </ScrollView>
