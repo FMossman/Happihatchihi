@@ -104,6 +104,15 @@ public class ProfileFragment extends Fragment {
                 bottomNavigationView.setVisibility(View.VISIBLE);
             }
         });
+        final Button editGoals = view.findViewById(R.id.editGoalsBtn);
+        editGoals.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new EditGoalsFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.VISIBLE);
+            }
+        });
         return view;
 
     }
