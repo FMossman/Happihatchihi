@@ -17,7 +17,7 @@ public class MainFragment extends Fragment {
 
     // Interface so MainFragment can access method in MainActivity
     public interface WaterWarningClickListener {
-        void waterWarningClicked();
+        void waterWarningClicked(MainFragment main);
     }
     private WaterWarningClickListener listener;
 
@@ -53,7 +53,7 @@ public class MainFragment extends Fragment {
                 waterWarningBtn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         if (listener != null) {
-                            listener.waterWarningClicked();
+                            listener.waterWarningClicked(new MainFragment());
                         }
                     }
                 });
