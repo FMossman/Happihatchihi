@@ -35,6 +35,25 @@
 
     <ScrollView
         android:layout_width="389dp"
+        android:layout_height="650dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/historyBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="389dp"
         android:layout_height="519dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,19 +63,31 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/waterClosedConstraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/goal_stat_background"
+          
+          <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/waterClosedConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/goal_stat_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_marginBottom="8dp"
+            tools:layout_marginEnd="8dp"
+            tools:layout_marginStart="8dp"
+            android:paddingTop="4dp">
+
                 tools:layout_marginStart="8dp"
                 tools:layout_marginBottom="8dp"
                 tools:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+
 
                 <ImageView
                     android:id="@+id/waterIconImageView"
@@ -95,17 +126,57 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+            <!-- water expanded -->
+            <LinearLayout
+                android:id="@+id/waterExpandedLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners_primary"
+                android:orientation="vertical"
+                android:padding="8dp"
+                tools:layout_marginBottom="8dp"
+                tools:layout_marginEnd="8dp"
+                tools:layout_marginStart="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:src="@drawable/history_goal_summary" />
+
+                <Button
+                    android:id="@+id/waterMoreHistoryBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/lightGraphics"
+                    android:text="Click for more stats!"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <!-- fruit and veg -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/fruitClosedConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/goal_stat_background"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/waterClosedConstraintLayout"
+                tools:layout_marginBottom="8dp"
+                tools:layout_marginEnd="8dp"
+                tools:layout_marginStart="8dp"
+                android:paddingTop="4dp">
+
                 tools:layout_marginStart="8dp"
                 tools:layout_marginBottom="8dp"
                 tools:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/waterClosedConstraintLayout">
+
 
                 <ImageView
                     android:id="@+id/fruitIconImageView"
@@ -144,17 +215,57 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+            <!-- fruit and veg expanded -->
+            <LinearLayout
+                android:id="@+id/fruitExpandedLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners_primary"
+                android:orientation="vertical"
+                android:padding="8dp"
+                tools:layout_marginBottom="8dp"
+                tools:layout_marginEnd="8dp"
+                tools:layout_marginStart="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:src="@drawable/fruit_history" />
+
+                <Button
+                    android:id="@+id/fruitMoreHistoryBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/lightGraphics"
+                    android:text="Click for more stats!"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <!-- meditation -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/meditationClosedConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/goal_stat_background"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fruitClosedConstraintLayout"
+                tools:layout_marginBottom="8dp"
+                tools:layout_marginEnd="8dp"
+                tools:layout_marginStart="8dp"
+                android:paddingTop="4dp">
+
                 tools:layout_marginStart="8dp"
                 tools:layout_marginBottom="8dp"
                 tools:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fruitClosedConstraintLayout">
+
 
                 <ImageView
                     android:id="@+id/meditationIconImageView"
@@ -193,11 +304,51 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+            <!-- meditation expanded -->
+            <LinearLayout
+                android:id="@+id/medExpandedLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners_primary"
+                android:orientation="vertical"
+                android:padding="8dp"
+                tools:layout_marginBottom="8dp"
+                tools:layout_marginEnd="8dp"
+                tools:layout_marginStart="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:src="@drawable/meditation_history" />
+
+                <Button
+                    android:id="@+id/medMoreHistoryBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/lightGraphics"
+                    android:text="Click for more stats!"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <!-- Streaks -->
+
             <TextView
                 android:id="@+id/streaksTextView"
                 style="@style/BoldTextViewStyleOnWhite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Streaks"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <!-- streak update -->
                 android:layout_marginTop="16dp"
                 android:text="Streaks"
                 android:textColor="@color/colorPrimary"
@@ -212,12 +363,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/goal_stat_background"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/streaksTextView"
+                tools:layout_marginBottom="8dp"
+                tools:layout_marginEnd="8dp"
+                tools:layout_marginStart="8dp">
+
                 tools:layout_marginStart="8dp"
                 tools:layout_marginBottom="8dp"
                 tools:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/streaksTextView">
+
 
                 <ImageView
                     android:id="@+id/streakIconImageView"
@@ -249,6 +409,14 @@
                 style="@style/BoldTextViewStyleOnWhite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Your MAX streaks each month!"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp" />
+
                 android:layout_marginTop="16dp"
                 android:text="Your MAX streaks each month!"
                 android:textColor="@color/colorPrimary"
@@ -258,10 +426,15 @@
                 app:layout_constraintTop_toTopOf="@id/CurrentStreakConstraintLayout" />
 
 
+
             <ImageView
                 android:id="@+id/streakGraphImgView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                android:src="@drawable/streak_graph_months"
+                app:layout_constraintTop_toTopOf="@id/streaksGraphTextView" />
+
                 android:src="@drawable/streak_graph"
                 app:layout_constraintTop_toTopOf="@id/streaksGraphTextView"
                 />
