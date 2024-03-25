@@ -33,13 +33,7 @@
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 
-    <ScrollView
-        android:layout_width="389dp"
-        android:layout_height="650dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 
     <ImageButton
@@ -50,6 +44,7 @@
         android:src="@drawable/back_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ScrollView
         android:layout_width="389dp"
@@ -63,7 +58,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+
             android:padding="8dp">
+
+            android:padding="8dp"
+            tools:ignore="ExtraText"
+            >
+
 
           
           <androidx.constraintlayout.widget.ConstraintLayout
