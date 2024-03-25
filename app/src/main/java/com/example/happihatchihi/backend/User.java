@@ -43,8 +43,6 @@ public class User {
     public User(String username, String password) {
     }
 
-    public User(String username, String password, String firstName, String lastName, String email) {
-    }
 
     /**
      * Returns the first name of the user.

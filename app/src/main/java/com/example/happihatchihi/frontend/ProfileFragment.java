@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.happihatchihi.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -139,6 +140,15 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        ImageView backButton = view.findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.VISIBLE);
+            }
+        });
         
     }
 }
