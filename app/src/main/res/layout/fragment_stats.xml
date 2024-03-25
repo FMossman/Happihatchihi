@@ -33,23 +33,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ScrollView
-        android:layout_width="389dp"
-        android:layout_height="650dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/historyBackBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 
     <ScrollView
@@ -64,8 +50,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
-            android:orientation="vertical">
+            android:padding="8dp"
+            tools:ignore="ExtraText"
+            >
+
 
           
           <androidx.constraintlayout.widget.ConstraintLayout
