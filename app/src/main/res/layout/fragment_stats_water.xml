@@ -7,15 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".frontend.StatsFragment">
 
-    <Button
+    <ImageButton
         android:id="@+id/historyBackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@android:color/white"
+        android:src="@drawable/back_button"/>
+
+
+        />
 
 
     <LinearLayout
@@ -26,6 +26,7 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -50,16 +51,19 @@
             android:textColor="@color/colorPrimary"
             android:textSize="24dp"
             android:textStyle="bold"
-            />
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/progressTextView"
         style="@style/BoldTextViewStyleOnWhite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="276dp"
+        android:layout_height="69dp"
         android:layout_gravity="center_vertical"
-        android:layout_margin="8dp"
         android:gravity="center_horizontal"
         android:text="You've logged this goal\n100 times!\n"
         android:textColor="@color/colorPrimary"
@@ -69,8 +73,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goalTitleLayout" />
 
-
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="389dp"
         android:layout_height="650dp"
         android:layout_marginTop="32dp"
@@ -79,6 +83,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressTextView">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,18 +91,23 @@
             android:padding="8dp">
 
             <!-- today -->
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="30dp" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/todayClosedConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/goal_stat_background"
+                android:paddingTop="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_marginBottom="8dp"
                 tools:layout_marginEnd="8dp"
-                tools:layout_marginStart="8dp"
-                android:paddingTop="4dp">
+                tools:layout_marginStart="8dp">
 
 
                 <TextView
@@ -106,8 +116,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:paddingBottom="16dp"
                     android:paddingTop="8dp"
+                    android:paddingBottom="16dp"
                     android:text="Today"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -128,6 +138,9 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
             <!-- today expanded -->
             <LinearLayout
                 android:id="@+id/todayExpandedLayout"
@@ -146,19 +159,23 @@
                     android:src="@drawable/history_goal_summary" />
             </LinearLayout>
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
+
             <!-- week -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/weekClosedConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/goal_stat_background"
+                android:paddingTop="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_marginBottom="8dp"
                 tools:layout_marginEnd="8dp"
-                tools:layout_marginStart="8dp"
-                android:paddingTop="4dp">
+                tools:layout_marginStart="8dp">
 
 
                 <TextView
@@ -167,8 +184,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:paddingBottom="16dp"
                     android:paddingTop="8dp"
+                    android:paddingBottom="16dp"
                     android:text="Last 7 days"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -189,6 +206,9 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
             <!-- week expanded -->
             <LinearLayout
                 android:id="@+id/weekExpandedLayout"
@@ -207,19 +227,23 @@
                     android:src="@drawable/weekly_water" />
             </LinearLayout>
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
+
             <!-- month -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/monthClosedConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/goal_stat_background"
+                android:paddingTop="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_marginBottom="8dp"
                 tools:layout_marginEnd="8dp"
-                tools:layout_marginStart="8dp"
-                android:paddingTop="4dp">
+                tools:layout_marginStart="8dp">
 
 
                 <TextView
@@ -228,8 +252,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:paddingBottom="16dp"
                     android:paddingTop="8dp"
+                    android:paddingBottom="16dp"
                     android:text="Last 4 weeks"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -250,6 +274,9 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
             <!-- month expanded -->
             <LinearLayout
                 android:id="@+id/monthExpandedLayout"
@@ -267,6 +294,10 @@
                     android:layout_height="280dp"
                     android:src="@drawable/month_water" />
             </LinearLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
 
         </LinearLayout>
     </ScrollView>
