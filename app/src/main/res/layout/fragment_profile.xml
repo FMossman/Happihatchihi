@@ -30,7 +30,6 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="230dp"
-        android:onClick="goToEditGoals"
         android:text="Edit Goals"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

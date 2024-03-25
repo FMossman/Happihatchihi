@@ -25,6 +25,7 @@
     </string-array>
     <string name="recurrenceinit">Water</string>
     <string name="welcome_message"><![CDATA[Welcome %1$s! In order to get started, you now need to decide on your wellbeing goals!]]></string>
+    <string name="hatchiPauseText">By pausing your Hatchi, you will no longer receive notifications about your goals, your streaks will be frozen and your Hatchi will remain alive. This is perfect for taking short breaks from the app.</string>
     <string-array name="recurrence_array">
         <item>Select one</item>
         <item>1</item>
