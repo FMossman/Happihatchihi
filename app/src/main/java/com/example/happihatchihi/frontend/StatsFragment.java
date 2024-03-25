@@ -20,7 +20,6 @@ import com.example.happihatchihi.R;
  */
 public class StatsFragment extends Fragment {
 
-
     public StatsFragment() {
         // Required empty public constructor
     }
