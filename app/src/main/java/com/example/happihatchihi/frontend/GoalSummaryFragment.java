@@ -26,15 +26,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
  */
 public class GoalSummaryFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    EditText name;
-    private String mParam2;
     String nameString;
     SharedPreferences sharedPreferences;
 
@@ -42,20 +34,9 @@ public class GoalSummaryFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RegisterFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static GoalSummaryFragment newInstance(String param1, String param2) {
+    public static GoalSummaryFragment newInstance() {
         GoalSummaryFragment fragment = new GoalSummaryFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -63,11 +44,6 @@ public class GoalSummaryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
 
     }
 
@@ -95,7 +71,7 @@ public class GoalSummaryFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     // Navigate to the WaterGoalDetailsFragment
-                    SetInitialGoalsFragment fragment = SetInitialGoalDetailsWaterFragment.newInstance(mParam1, mParam2);
+                    SetInitialGoalsFragment fragment = SetInitialGoalDetailsWaterFragment.newInstance();
                     FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_container, fragment);
                     transaction.addToBackStack(null);
@@ -107,7 +83,7 @@ public class GoalSummaryFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     // Navigate to the FruitAndVegGoalDetailsFragment
-                    SetInitialGoalsFragment fragment = SetInitialGoalDetailsFruitAndVegFragment.newInstance(mParam1, mParam2);
+                    SetInitialGoalsFragment fragment = SetInitialGoalDetailsFruitAndVegFragment.newInstance();
                     FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_container, fragment);
                     transaction.addToBackStack(null);
@@ -119,7 +95,7 @@ public class GoalSummaryFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     // Navigate to the CustomGoalDetailsFragment
-                    SetInitialGoalsFragment fragment = SetInitialGoalDetailsCustomGoalFragment.newInstance(mParam1, mParam2);
+                    SetInitialGoalsFragment fragment = SetInitialGoalDetailsCustomGoalFragment.newInstance();
                     FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_container, fragment);
                     transaction.addToBackStack(null);

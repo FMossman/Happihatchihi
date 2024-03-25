@@ -31,7 +31,7 @@ public class Meditation extends AppCompatActivity {
     /**
     * Method to set up hatchi player and initialize meditation activity
     * @param inputValues Object containing values to start the activity
-     */
+     **/
     @Override
     public void onCreate(Bundle inputValues){
         super.onCreate(inputValues);
@@ -45,18 +45,18 @@ public class Meditation extends AppCompatActivity {
         timeSelection();
     }
 
-    /*
-    Method to fetch the tracks ID from the raw folder
-    @params nameOfTrack Name of the track to fetch the ID for
-    @return ID of the track
+    /**
+    *Method to fetch the tracks ID from the raw folder
+    *@params nameOfTrack Name of the track to fetch the ID for
+    *@return ID of the track
      */
     @SuppressLint("DiscouragedApi")
     private int getMoodTracksId(String nameOfTrack){
         return getResources().getIdentifier(
                 nameOfTrack, "raw", getPackageName());
     }
-    /*
-    Method to change the track duration field depending on the radio button selected
+    /**
+    *Method to change the track duration field depending on the radio button selected
      */
     private void timeSelection(){
         RadioGroup duration = findViewById(R.id.durationRadioGroup);
@@ -74,8 +74,8 @@ public class Meditation extends AppCompatActivity {
                 }}
         });
     }
-    /*
-    Method to change to the previous track
+    /**
+    *Method to change to the previous track
      */
     private void playPrevious() {
         if (trackPlaying > 0) {
@@ -85,8 +85,8 @@ public class Meditation extends AppCompatActivity {
         }
         playTrack();
     }
-    /*
-    Method to change to the next track
+    /**
+    *Method to change to the next track
      */
     private void playNext(){
         if(trackPlaying < playList.size()-1){
@@ -94,8 +94,8 @@ public class Meditation extends AppCompatActivity {
         }
         playTrack();
     }
-    /*
-    Method to - play the track and set the text of the meditation page
+    /**
+    *Method to - play the track and set the text of the meditation page
      */
     private void playTrack() {
         if (hatchiPlayer != null) {
@@ -112,7 +112,7 @@ public class Meditation extends AppCompatActivity {
             moodView.setText("Breath in and out with the soothing sound of the ocean." +
                     "Let the waves wash all your Hatchi worries away.");
         }
-        //Starts the track playing with the duration provided
+//        Starts the track playing with the duration provided
         hatchiPlayer.start();
         new android.os.Handler().postDelayed(new Runnable() {
             @Override
@@ -125,19 +125,19 @@ public class Meditation extends AppCompatActivity {
             }
         }, durationOfMeditation);
     }
-    /*Next button onClick method
+    /**Next button onClick method
     @param v A View object
      */
     public void onNextClicked(View v){
             playNext();
     }
-    /*Previous button onClick method
+    /**Previous button onClick method
     @param v A View object
      */
     public void onPreviousClicked(View v){
         playPrevious();
     }
-    /*play audio onClick method
+    /**play audio onClick method
     @param v: A View object
      */
     public void playAudio(View v){
@@ -153,6 +153,9 @@ public class Meditation extends AppCompatActivity {
         i.putExtra("showNav", true);
         i.putExtra("showMainFrag", true);
         startActivity(i);
+        if(hatchiPlayer.isPlaying()) {
+            hatchiPlayer.pause();
+        }
     }
     @Override
     protected void onDestroy(){

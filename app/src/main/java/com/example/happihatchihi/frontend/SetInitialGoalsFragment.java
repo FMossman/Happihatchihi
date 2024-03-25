@@ -13,12 +13,6 @@ import android.widget.RadioGroup;
 
 import com.example.happihatchihi.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Represents the SetInitialGoals screen of the application.
- * Use the {@link SetInitialGoalsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SetInitialGoalsFragment extends Fragment {
 
     /**
@@ -29,7 +23,7 @@ public class SetInitialGoalsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static SetInitialGoalsFragment newInstance(String param1, String param2) {
+    public static SetInitialGoalsFragment newInstance() {
         SetInitialGoalsFragment fragment = new SetInitialGoalsFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);

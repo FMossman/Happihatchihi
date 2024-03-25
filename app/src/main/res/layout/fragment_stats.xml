@@ -22,15 +22,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/historyBackBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/historyBackBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:text="Back"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 
     <ScrollView
@@ -41,16 +41,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+
+    <ImageButton
         android:id="@+id/historyBackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Back"
+        android:background="@android:color/white"
+        android:src="@drawable/back_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <ScrollView
         android:layout_width="389dp"
@@ -65,7 +64,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="8dp">
-            android:orientation="vertical">
 
           
           <androidx.constraintlayout.widget.ConstraintLayout
@@ -79,14 +77,8 @@
             tools:layout_marginBottom="8dp"
             tools:layout_marginEnd="8dp"
             tools:layout_marginStart="8dp"
-            android:paddingTop="4dp">
-
-                tools:layout_marginStart="8dp"
-                tools:layout_marginBottom="8dp"
-                tools:layout_marginEnd="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+            android:paddingTop="4dp"
+            android:paddingBottom="10dp"  >
 
 
                 <ImageView
@@ -126,7 +118,9 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"/>
             <!-- water expanded -->
             <LinearLayout
                 android:id="@+id/waterExpandedLayout"
@@ -153,6 +147,9 @@
                     android:text="Click for more stats!"
                     android:textColor="@color/colorPrimary" />
             </LinearLayout>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"/>
 
             <!-- fruit and veg -->
 
@@ -170,12 +167,7 @@
                 tools:layout_marginStart="8dp"
                 android:paddingTop="4dp">
 
-                tools:layout_marginStart="8dp"
-                tools:layout_marginBottom="8dp"
-                tools:layout_marginEnd="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/waterClosedConstraintLayout">
+
 
 
                 <ImageView
@@ -215,7 +207,9 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"/>
             <!-- fruit and veg expanded -->
             <LinearLayout
                 android:id="@+id/fruitExpandedLayout"
@@ -242,6 +236,9 @@
                     android:text="Click for more stats!"
                     android:textColor="@color/colorPrimary" />
             </LinearLayout>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"/>
 
             <!-- meditation -->
 
@@ -259,12 +256,7 @@
                 tools:layout_marginStart="8dp"
                 android:paddingTop="4dp">
 
-                tools:layout_marginStart="8dp"
-                tools:layout_marginBottom="8dp"
-                tools:layout_marginEnd="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fruitClosedConstraintLayout">
+
 
 
                 <ImageView
@@ -349,14 +341,7 @@
                 android:textStyle="bold" />
 
             <!-- streak update -->
-                android:layout_marginTop="16dp"
-                android:text="Streaks"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/meditationClosedConstraintLayout" />
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/CurrentStreakConstraintLayout"
@@ -371,12 +356,7 @@
                 tools:layout_marginEnd="8dp"
                 tools:layout_marginStart="8dp">
 
-                tools:layout_marginStart="8dp"
-                tools:layout_marginBottom="8dp"
-                tools:layout_marginEnd="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/streaksTextView">
+
 
 
                 <ImageView
@@ -417,13 +397,7 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="16dp" />
 
-                android:layout_marginTop="16dp"
-                android:text="Your MAX streaks each month!"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/CurrentStreakConstraintLayout" />
+
 
 
 
@@ -435,9 +409,7 @@
                 android:src="@drawable/streak_graph_months"
                 app:layout_constraintTop_toTopOf="@id/streaksGraphTextView" />
 
-                android:src="@drawable/streak_graph"
-                app:layout_constraintTop_toTopOf="@id/streaksGraphTextView"
-                />
+
 
         </LinearLayout>
     </ScrollView>

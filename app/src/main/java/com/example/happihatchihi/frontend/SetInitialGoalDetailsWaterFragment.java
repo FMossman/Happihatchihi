@@ -23,19 +23,8 @@ import android.app.TimePickerDialog;
 import android.widget.TimePicker;
 import java.util.Locale;
 
-/**
- * A simple {@link Fragment} subclass.
- * Represents the SetInitialGoals screen of the application.
- * Use the {@link SetInitialGoalsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class SetInitialGoalDetailsWaterFragment extends Fragment {
 
-    Button timePickerButton1;
-    Button timePickerButton2;
-    Button timePickerButton3;
-    Button timePickerButton4;
-    Button timePickerButton5;
+public class SetInitialGoalDetailsWaterFragment extends Fragment {
     int hour, minute;
 
     /**
@@ -46,7 +35,7 @@ public class SetInitialGoalDetailsWaterFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static SetInitialGoalsFragment newInstance(String param1, String param2) {
+    public static SetInitialGoalsFragment newInstance() {
         SetInitialGoalsFragment fragment = new SetInitialGoalsFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);

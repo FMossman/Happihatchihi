@@ -27,46 +27,21 @@ import java.util.Objects;
  */
 public class RegistrationLandingFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public RegistrationLandingFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RegistrationLandingFragment.
-     */
     // TODO: Rename and change types and number of parameters
-    public static RegistrationLandingFragment newInstance(String param1, String param2) {
+    public static RegistrationLandingFragment newInstance() {
         RegistrationLandingFragment fragment = new RegistrationLandingFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-        
-
-        
     }
 
 
@@ -83,7 +58,7 @@ public class RegistrationLandingFragment extends Fragment {
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
         String name = sharedPreferences.getString("name", "");
         TextView nameTextView = getView().findViewById(R.id.detailsInstructions); // Initialize nameTextView variable
-        nameTextView.setText("Welcome " + name + "! In order to get you started, you now need to decide on your wellbeing goals!");
+        nameTextView.setText("Welcome " + name + "! You're about to hatch your Hatchi! It grows and thrives by you meeting your wellbeing goals. Build up your streak and watch your Hatchi grow! In order to get you started, you now need to decide on your wellbeing goals!");
         super.onViewCreated(view, savedInstanceState);
         Button setGoalsButton = view.findViewById(R.id.setGoalsButton);
 
