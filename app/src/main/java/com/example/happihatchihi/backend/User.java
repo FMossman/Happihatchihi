@@ -190,6 +190,16 @@ public class User {
         }
     }
 
+    /**
+     * Removes a selected goal.
+     * @param goal the Goal to be removed.
+     * @return A confirmation message of the action taken.
+     */
+
+    public  String removeGoals(Goal goal) {
+        this.goals.remove(goal);
+        return goal +  " has been removed!";
+    }
 
     /**
      * Returns the alive status of the user's Hatchi.
@@ -235,7 +245,11 @@ public class User {
      * Sets streak count of the user.
      */
     public void setStreakCount() {
+        for (Goal goal : this.goals) {
+            if (goal.isGoalAchieved()) {
                 this.streakCount ++;
+            }
+        }
     }
 
     /**
