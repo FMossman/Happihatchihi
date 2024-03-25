@@ -100,25 +100,34 @@ public class RegisterFragment extends Fragment {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("name", nameString);
                 editor.apply();
-
-                if (!password.equals(confirmPassword)) {
-                    Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
-                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    Toast.makeText(getActivity(), "The email address is not valid", Toast.LENGTH_SHORT).show();
-                } else if (password.isEmpty()) {
-                    Toast.makeText(getActivity(), "Please enter your password", Toast.LENGTH_SHORT).show();
-                } else if (confirmPassword.isEmpty()) {
-                    Toast.makeText(getActivity(), "Please confirm your password", Toast.LENGTH_SHORT).show();
-                } else if (email.isEmpty()) {
-                    Toast.makeText(getActivity(), "Please enter your email address", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Passwords match and email is valid, perform further actions
-                    Toast.makeText(getActivity(), "Account created", Toast.LENGTH_SHORT).show();
-                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new RegistrationLandingFragment()).commit();
-                }
-
-                
-            }
+                EditText firstNameEditText = view.findViewById(R.id.firstNameEdtTxt);
+                EditText lastNameEditText = view.findViewById(R.id.lastNameEdtTxt);
+                EditText emailEditText = view.findViewById(R.id.emailEdtTxt);
+                EditText passwordEditText = view.findViewById(R.id.editTextPassword);
+                EditText confirmPasswordEditText = view.findViewById(R.id.editTextConfirmPassword);
+                Button registerButton = view.findViewById(R.id.registerButton);
+                String firstName = firstNameEditText.getText().toString();
+                String lastName = lastNameEditText.getText().toString();
+                        if (firstName.isEmpty()) {
+                            Toast.makeText(getActivity(), "Please enter your first name", Toast.LENGTH_SHORT).show();
+                        } else if (lastName.isEmpty()) {
+                            Toast.makeText(getActivity(), "Please enter your last name", Toast.LENGTH_SHORT).show();
+                        } else if (email.isEmpty()) {
+                            Toast.makeText(getActivity(), "Please enter your email address", Toast.LENGTH_SHORT).show();
+                        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                            Toast.makeText(getActivity(), "The email address is not valid", Toast.LENGTH_SHORT).show();
+                        } else if (password.isEmpty()) {
+                            Toast.makeText(getActivity(), "Please enter your password", Toast.LENGTH_SHORT).show();
+                        } else if (confirmPassword.isEmpty()) {
+                            Toast.makeText(getActivity(), "Please re-enter your password", Toast.LENGTH_SHORT).show();
+                        } else if (!password.equals(confirmPassword)) {
+                            Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // Passwords match and email is valid, take user to registration landing screen
+                            Toast.makeText(getActivity(), "Account created", Toast.LENGTH_SHORT).show();
+                            getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new RegistrationLandingFragment()).commit();
+                        }
+                    }
         });
     }
 }

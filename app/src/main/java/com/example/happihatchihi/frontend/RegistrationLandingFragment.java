@@ -4,11 +4,13 @@ import android.content.Context; // Add missing import statement
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.util.Patterns;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.happihatchihi.R;
@@ -91,6 +93,19 @@ public class RegistrationLandingFragment extends Fragment {
                 getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetInitialGoalsFragment()).commit();
                 
                 
+            }
+        });
+
+        ImageView backButton = view.findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to RegisterFragment
+                Fragment registerFragment = new RegisterFragment();
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, registerFragment)
+                        .commit();
             }
         });
 
