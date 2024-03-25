@@ -40,7 +40,7 @@ public class StatsWaterFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_stats_water, container, false);
 
-        Button historyBackBtn = view.findViewById(R.id.historyBackBtn);
+        ImageButton historyBackBtn = view.findViewById(R.id.historyBackBtn);
         ImageButton todayHistoryImgBtn = view.findViewById(R.id.todayHistoryImgBtn);
         ImageButton weekHistoryImgBtn = view.findViewById(R.id.weekHistoryImgBtn);
         ImageButton monthHistoryImgBtn = view.findViewById(R.id.monthHistoryImgBtn);
