@@ -1,5 +1,6 @@
 package com.example.happihatchihi.backend;
 
+import com.example.happihatchihi.backend.HatchiWarning;
 
 import java.util.ArrayList;
 
@@ -17,11 +18,9 @@ public class Goal {
     // int to show how many times user have met goal
     private int goalProgress;
     // String to show if goal is daily or weekly
-    //private ArrayList<HatchiWarning> warnings;
-    // String to how whether gaol is one of built in types or user created
-    private String type;
-    // String to hold whether the goal is daily, weekly or monthly
     private String recurrence;
+    // String to know whether goal is one of built-in types or user created
+    private String type;
     // boolean to hold whether a goal has been achieved
     private boolean goalAchieved;
 
@@ -83,43 +82,90 @@ public class Goal {
         this.goalQuantity = goalQuantity;
     }
 
-
+    /**
+     * This is a method for accessing the goal progress.
+     *
+     * @return goalProgress The progress of the goal
+     */
     public int getGoalProgress() {
         return goalProgress;
     }
-
+    /**
+     * This is a method for setting the goal progress.
+     *
+     * @param goalProgress The progress of the goal
+     */
     public void setGoalProgress(int goalProgress) {
         this.goalProgress = goalProgress;
     }
 
-    //public ArrayList<HatchiWarning> getWarnings() {
-        //return warnings;
-    //}
+    /**
+     * This is a method for accessing a list of Hatchi warnings.
+     *
+     * @return warnings The list of Hatchi warnings
+     */
+    public ArrayList<HatchiWarning> getWarnings() {
+        return warnings;
+    }
 
-    //public void setWarnings(ArrayList<HatchiWarning> warnings) {
-     //   this.warnings = warnings;
-    //}
+    /**
+     * This is a method for setting the list of warnings.
+     *
+     * @param warnings list of warnings
+     */
+    public void setWarnings(ArrayList<HatchiWarning> warnings) {
+        this.warnings = warnings;
+    }
 
+    /**
+     * This is a method for accessing goal type.
+     *
+     * @return type The type of goal
+     */
     public String getType() {
         return type;
     }
 
+    /**
+     * This is a method for setting the type of goal.
+     *
+     * @param type The type of goal
+     */
     public void setType(String type) {
         this.type = type;
     }
 
+    /**
+     * This is a method for accessing the recurrence of a goal.
+     *
+     * @return reccurrence The recurrence of the goal
+     */
     public String getRecurrence() {
         return recurrence;
     }
 
+    /**
+     * This is a method for setting the recurrence of a goal.
+     *
+     * @param recurrence The recurrence of the goal
+     */
     public void setRecurrence(String recurrence) {
         this.recurrence = recurrence;
     }
 
+    /**
+     * This is a method for accessing whether a goal is achieved.
+     *
+     * @return goalAchieved Whether a goal is achieved
+     */
     public boolean isGoalAchieved() {
         return goalAchieved;
     }
-
+    /**
+     * This is a method for setting whether a goal has been achieved.
+     *
+     * @param goalAchieved Whether a goal has been achieved
+     */
     public void setGoalAchieved(boolean goalAchieved) {
         this.goalAchieved = goalAchieved;
     }
@@ -159,16 +205,67 @@ public class Goal {
         }
     }
 
-    public void removeProgress(){
-        if(this.goalProgress > 0) {
-            this.goalProgress--;
+    /**
+     * This is a method for updating whether a warning is due from the list of warnings.
+     *
+     * @param hatchiWarning HatchiWarning object
+     */
+    public void updateWarningDue(HatchiWarning hatchiWarning){
+        for (HatchiWarning warning: warnings){
+            if (hatchiWarning.isWarningDue()) {
+                if(this.goalProgress == this.goalQuantity){
+                    hatchiWarning.setWarningDue(false);
+                }
+            }
         }
     }
 
-    //public void checkGoalStatus(){
-    //    for ( HatchiWarning warning : warnings) {
+    /**
+     * This is a method for adding a warning to the list of warnings.
+     *
+     * @param hatchiWarning HatchiWarning object
+     */
+    public void addWarning(HatchiWarning hatchiWarning){
+        if(!warnings.contains(hatchiWarning))
+        {
+            warnings.add(hatchiWarning);
+        }
 
-     //   }
-    //}
+    }
+
+    /**
+     * This is a method for removing a warning to the list of warnings.
+     *
+     * @param hatchiWarning HatchiWarning object
+     */
+    public void deleteWarning(HatchiWarning hatchiWarning) {
+        if(warnings.contains(hatchiWarning))
+        {
+            warnings.remove(hatchiWarning);
+        }
+    }
+
+    /**
+     * This is a method for updating the fields of a warning in the list of warnings.
+     *
+     * @param hatchiWarning HatchiWarning object
+     * @param newRecurrence updated recurrence
+     * @param newTime updated time of daily warnings
+     * @param newDay updated day of weekly warnings
+     * @param newNotifOn update whether user wants to receive warning notifications
+     */
+    public void editWarning(HatchiWarning hatchiWarning, String newRecurrence, String newTime,
+                            int newDay, boolean newNotifOn)
+    {
+        if (warnings.contains(hatchiWarning))
+        {
+            hatchiWarning.setDay(newDay);
+            hatchiWarning.setRecurrence(newRecurrence);
+            hatchiWarning.setTime(newTime);
+            hatchiWarning.setNotifOn(newNotifOn);
+        }
+    }
+
+    public void removeProgress() {
+    }
 }
-
