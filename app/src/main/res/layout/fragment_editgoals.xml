@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.HappiHatchiHi.FullscreenContainer">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_button"
+            android:background="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"/>
+                <TextView
+                    android:id="@+id/editGoalsTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center_horizontal"
+                    android:text="Edit Goals"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="28dp"
+                    android:textStyle="bold"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/healtherEatingEditGoalsTxt"
+                            android:layout_width="330dp"
+                            android:layout_height="54dp"
+                            android:layout_gravity="start"
+                            android:drawableLeft="@drawable/apple_wrapper"
+                            android:text="Fruits and Vegetables"
+                            android:gravity="left|center_vertical"
+                            android:background="@drawable/rounded_corners" />
+
+                        <Button
+                            android:id="@+id/healtherEatingEditBtn"
+                            android:layout_width="28dp"
+                            android:layout_height="34dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/edit" />
+
+                    </RelativeLayout>
+
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="16dp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/waterEditGoalsTxt"
+                            android:layout_width="330dp"
+                            android:layout_height="54dp"
+                            android:layout_gravity="start"
+                            android:drawableLeft="@drawable/water_wrapper"
+                            android:text="Water"
+                            android:gravity="left|center_vertical"
+                            android:background="@drawable/rounded_corners" />
+
+                        <Button
+                            android:id="@+id/waterEditBtn"
+                            android:layout_width="28dp"
+                            android:layout_height="34dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/edit" />
+                        />
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="16dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/meditationEditGoalsTxt"
+                            android:layout_width="330dp"
+                            android:layout_height="54dp"
+                            android:layout_gravity="start"
+                            android:drawableLeft="@drawable/meditation_wrapper"
+                            android:text="Meditation"
+                            android:gravity="left|center_vertical"
+                            android:background="@drawable/rounded_corners" />
+
+                        <Button
+                            android:id="@+id/meditationEditBtn"
+                            android:layout_width="28dp"
+                            android:layout_height="34dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/edit" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

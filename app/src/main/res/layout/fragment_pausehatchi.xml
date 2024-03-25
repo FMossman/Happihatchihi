@@ -32,7 +32,7 @@
             android:layout_gravity="center_horizontal"
             android:text="On a break!"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryVariant"
+            android:textColor="@color/colorPrimary"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="@+id/pause_white_rectangle"
@@ -43,13 +43,15 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"/>
 
-        <ImageView
+        <TextView
             android:id="@+id/pauseHatchi"
-            android:layout_width="409dp"
+            android:layout_width="358dp"
             android:layout_height="148dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:src="@drawable/pause"
+            android:text="@string/hatchiPauseText"
+            android:textAlignment="center"
+            android:textSize="18dp"
             app:layout_constraintTop_toBottomOf="@+id/onABreak"
             tools:layout_editor_absoluteX="2dp" />
 

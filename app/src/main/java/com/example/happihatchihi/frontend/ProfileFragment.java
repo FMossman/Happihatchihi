@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.happihatchihi.R;
@@ -180,5 +181,15 @@ public class ProfileFragment extends Fragment {
             }
         });
         
+
+        Button editGoalsBtn = view.findViewById(R.id.editGoalsBtn);
+        editGoalsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new EditGoalsFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.VISIBLE);
+            }
+        });
     }
 }

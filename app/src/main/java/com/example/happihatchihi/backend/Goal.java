@@ -10,6 +10,7 @@ import java.util.ArrayList;
  */
 public class Goal {
 
+    private final ArrayList<Object> goals;
     private ArrayList<HatchiWarning> warnings;
     // int to hold the name of the goal (could be user created or default)
     private String name;
@@ -41,10 +42,13 @@ public class Goal {
         this.name = name;
         this.goalQuantity = goalQuantity;
         this.type = type;
+        this.goals = new ArrayList<>();
         this.recurrence = recurrence;
         //this.warnings = new ArrayList<>();
         this.goalProgress = 0;
         this.goalAchieved = false;
+
+
     }
 
     /**
@@ -265,6 +269,48 @@ public class Goal {
             hatchiWarning.setNotifOn(newNotifOn);
         }
     }
+
+    public String setGoals(Goal goals) {
+        if (this.goals.contains(goals)) {
+            return "This goal is already in your goals list!";
+        }
+        else {
+            this.goals.add(goals);
+            return "Goals updated successfully!";
+        }
+    }
+
+    /**
+     * Resets the user's goals by removing them.
+     * @return A confirmation message of the action taken.
+     */
+    public  String resetGoals() {
+        if (this.goals.isEmpty()) {
+            return "The goals list is Empty!";
+        }
+        else {
+            this.goals.clear();
+            return "Goals reset successfully!";
+        }
+    }
+
+    /**
+     * Removes a selected goal.
+     * @param goal the Goal to be removed.
+     * @return A confirmation message of the action taken.
+     */
+
+    public  String removeGoals(Goal goal) {
+        this.goals.remove(goal);
+        return goal +  " has been removed!";
+    }
+
+
+    /**
+     * Resets the user's goals by removing them.
+     * @return A confirmation message of the action taken.
+     */
+
 
     public void removeProgress() {
     }
