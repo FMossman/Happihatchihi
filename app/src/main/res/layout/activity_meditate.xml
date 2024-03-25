@@ -25,7 +25,7 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/meditateImageView"
       android:layout_alignParentStart="true"
-      android:layout_marginStart="4dp"
+      android:layout_marginStart="28dp"
       android:layout_marginBottom="96dp"
       android:onClick="onPreviousClicked"
       android:text="Previous"
@@ -52,7 +52,7 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/meditateImageView"
       android:layout_alignParentEnd="true"
-      android:layout_marginEnd="4dp"
+      android:layout_marginEnd="36dp"
       android:layout_marginBottom="96dp"
       android:onClick="onNextClicked"
       android:text="Next"
@@ -102,14 +102,13 @@
       app:layout_constraintHorizontal_bias="0.512"
       app:layout_constraintStart_toStartOf="parent" />
 
-  <Button
+  <ImageButton
       android:id="@+id/backButton"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="16dp"
-      android:layout_marginTop="16dp"
       android:onClick="backToHome"
-      android:text="Back"
+      android:background="@android:color/white"
+      android:src="@drawable/back_button"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 

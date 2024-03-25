@@ -140,11 +140,41 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        Button editProfileBtn = view.findViewById(R.id.editProfileBtn);
+        editProfileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new EditProfileFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.GONE);
+            }
+        });
+
+        Button pauseHatchiBtn = view.findViewById(R.id.pauseHatchiBtn);
+        pauseHatchiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new PauseHatchiFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.VISIBLE);
+            }
+        });
+
         ImageView backButton = view.findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
+                bottomNavigationView.setVisibility(View.VISIBLE);
+            }
+        });
+
+        Button editNotificationsBtn = view.findViewById(R.id.editNotificationsButton);
+        editNotificationsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new EditNotificationsFragment()).commit();
                 BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavView);
                 bottomNavigationView.setVisibility(View.VISIBLE);
             }

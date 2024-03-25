@@ -23,19 +23,8 @@ import android.app.TimePickerDialog;
 import android.widget.TimePicker;
 import java.util.Locale;
 
-/**
- * A simple {@link Fragment} subclass.
- * Represents the SetInitialGoals screen of the application.
- * Use the {@link SetInitialGoalsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SetInitialGoalDetailsMeditationFragment extends Fragment {
 
-    Button timePickerButton1;
-    Button timePickerButton2;
-    Button timePickerButton3;
-    Button timePickerButton4;
-    Button timePickerButton5;
     int hour, minute;
     /**
      * Default constructor for SetInitialGoalsFragment.

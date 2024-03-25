@@ -38,7 +38,7 @@ public class StatsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_stats, container, false);
 
-        Button backBtn = view.findViewById(R.id.historyBackBtn);
+        ImageButton backBtn = view.findViewById(R.id.historyBackBtn);
         Button waterBtn = view.findViewById(R.id.waterMoreHistoryBtn);
         Button fruitBtn = view.findViewById(R.id.fruitMoreHistoryBtn);
         Button medBtn = view.findViewById(R.id.medMoreHistoryBtn);
