@@ -3,6 +3,7 @@ package com.example.happihatchihi.frontend;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.fragment.app.Fragment;
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Wate
                         resetMoodIcon();
                         resetStatsIcon();
                         resetProfileIcon();
-                        showTrackPopup();
+                        showTrackPopup((MainFragment)selectedFragment);
                     }
 
                     if (selectedFragment != null) {
@@ -124,11 +125,11 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Wate
     /**
      *  A method to show the popup for tracking goals
      */
-    public void showTrackPopup() {
-        MainFragment mainFrag = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        TrackPopupFragment trackPopupFragment = new TrackPopupFragment(mainFrag);
+    public void showTrackPopup(MainFragment main) {
+
+        TrackPopupFragment trackPopupFragment = new TrackPopupFragment(main);
         trackPopupFragment.show(getSupportFragmentManager(), "track_popup_fragment");
-        }
+    }
 
     /**
      * A method to show the popup for registering the user's mood
@@ -170,11 +171,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Wate
      * A method for accessing the track popup from the water warning button
      */
     @Override
-    public void waterWarningClicked() {
-        showTrackPopup();
+    public void waterWarningClicked(MainFragment main) {
+        showTrackPopup(main);
     }
-
-
 }
 
 

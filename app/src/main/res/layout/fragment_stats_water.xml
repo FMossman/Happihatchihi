@@ -50,9 +50,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="24dp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottonOf="parent"/>
+            />
     </LinearLayout>
 
     <TextView
@@ -69,8 +67,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goalTitleLayout"
-        app:layout_constraintTop_toBottonOf="@+id/goalTitleLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/goalTitleLayout" />
 
 
     <ScrollView
